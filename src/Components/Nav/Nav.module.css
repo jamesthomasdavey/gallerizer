@@ -1,0 +1,7 @@
+.wrapper {
+  display: block;
+  position: absolute;
+  /* width: 260px; */
+  left: 0;
+  top: 0;
+}
