@@ -26,6 +26,8 @@ class App extends Component {
     selectedItemIndex: 0
   };
 
+  formRef = React.createRef();
+
   changeUnitHandler = () => {
     const oldUnit = this.state.isMetric;
     this.setState({ isMetric: !oldUnit });
@@ -40,15 +42,22 @@ class App extends Component {
     const adjustType = event.target.getAttribute(`data-type`);
     const newState = { ...this.state };
     if (adjustType === `increase`) {
-      newState.margin++;
+      if (this.state.margin + 1 <= this.state.maxMargin) {
+        newState.margin++;
+      }
     } else if (adjustType === `decrease`) {
-      newState.margin--;
+      if (this.state.margin > 0) {
+        newState.margin--;
+      }
     }
     this.setState(newState);
   };
 
   selectItemHandler = index => {
     const newState = { ...this.state };
+    if (index >= newState.formValues.itemQuantity || index < 0) {
+      return;
+    }
     newState.selectedItemIndex = index;
     this.setState(newState);
   };
@@ -65,6 +74,7 @@ class App extends Component {
     newState.margin = 0;
     newState.maxMargin = 0;
     newState.selectedItemIndex = 0;
+    this.formRef.current.resetFocus();
     this.setState(newState);
   };
 
@@ -92,7 +102,10 @@ class App extends Component {
       newState.selectedItemIndex,
       newState.newFormValues.itemQuantity
     );
-    newState.margin = this.decreaseMargin(newState.margin, newState.maxMargin);
+    newState.margin = this.decreaseMarginHandler(
+      newState.margin,
+      newState.maxMargin
+    );
     newState.formValues = newState.newFormValues;
     this.setState(newState);
   };
@@ -109,11 +122,17 @@ class App extends Component {
       : selectedItemIndex;
   };
 
-  decreaseMargin = (margin, maxMargin) => {
+  decreaseMarginHandler = (margin, maxMargin) => {
     return maxMargin < margin ? maxMargin : margin;
   };
 
   render() {
+    const disableDecreaseButton = this.state.margin <= 0;
+    const disableIncreaseButton = this.state.margin >= this.state.maxMargin;
+    const disablePreviousButton = this.state.selectedItemIndex <= 0;
+    const disableNextButton =
+      this.state.selectedItemIndex + 1 >= this.state.formValues.itemQuantity;
+
     return (
       <div className="app" onKeyPress={e => this.keyPressHandler(e)}>
         <Nav
@@ -124,6 +143,7 @@ class App extends Component {
         />
         <main>
           <Form
+            ref={this.formRef}
             isMetric={this.state.isMetric}
             includeHeight={this.state.includeHeight}
             newFormValues={this.state.newFormValues}
@@ -135,12 +155,14 @@ class App extends Component {
             isMetric={this.state.isMetric}
             includeHeight={this.state.includeHeight}
             formValues={this.state.formValues}
-            margin={this.state.margin}
-            maxMargin={this.state.maxMargin}
             selectedItemIndex={this.state.selectedItemIndex}
-            adjustMargin={this.adjustMarginHandler}
             selectItem={this.selectItemHandler}
-            decreaseMargin={this.decreaseMarginHandler}
+            margin={this.state.margin}
+            adjustMargin={this.adjustMarginHandler}
+            disableDecreaseButton={disableDecreaseButton}
+            disableIncreaseButton={disableIncreaseButton}
+            disablePreviousButton={disablePreviousButton}
+            disableNextButton={disableNextButton}
           />
         </main>
       </div>

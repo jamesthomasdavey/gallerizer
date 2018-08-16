@@ -1,5 +1,7 @@
 import React from "react";
 
+import classes from "./Results.module.css";
+
 import Error from "./Error/Error";
 import Margin from "./Margin/Margin";
 import Wall from "./Wall/Wall";
@@ -24,20 +26,37 @@ const results = props => {
   }
 
   return (
-    <div>
+    <div className={classes.Results}>
       <Margin
         adjustMargin={event => props.adjustMargin(event)}
         margin={props.margin}
-        maxMargin={props.maxMargin}
+        disableDecreaseButton={props.disableDecreaseButton}
+        disableIncreaseButton={props.disableIncreaseButton}
       />
-      <Wall
-        formValues={props.formValues}
-        margin={props.margin}
-        selectItem={props.selectItem}
-        selectedItemIndex={props.selectedItemIndex}
-        includeHeight={props.includeHeight}
-        decreaseMargin={props.decreaseMargin}
-      />
+      <div className={classes.innerResults}>
+        <button
+          className={classes.previousButton}
+          onClick={() => props.selectItem(props.selectedItemIndex - 1)}
+          disabled={props.disablePreviousButton}
+        >
+          &laquo;
+        </button>
+        <Wall
+          formValues={props.formValues}
+          margin={props.margin}
+          selectItem={props.selectItem}
+          selectedItemIndex={props.selectedItemIndex}
+          includeHeight={props.includeHeight}
+          decreaseMargin={props.decreaseMargin}
+        />
+        <button
+          className={classes.nextButton}
+          onClick={() => props.selectItem(props.selectedItemIndex + 1)}
+          disabled={props.disableNextButton}
+        >
+          &raquo;
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,24 @@
+.innerResults {
+  display: flex;
+}
+
+.Results button {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  font-weight: 300;
+  outline: 0;
+  padding: 0 1rem;
+  color: grey;
+  transition: 0.3s all ease;
+}
+
+.Results button:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.Results button:disabled {
+  cursor: default;
+  color: lightgrey;
+}

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
 
 /*****************************
 ******************* VARIABLES
@@ -6,26 +6,28 @@
 
 /* colors */
 
-/* :root {
-} */
+:root {
+
+}
 
 /* fonts */
 
 :root {
-  --main-font-stack: "Open Sans", sans-serif;
+  --main-stack: 'Open Sans', sans-serif;
 }
 
 /* dimensions */
 
-/* :root {
-} */
+:root {
+
+}
 
 /*****************************
 ************************ BASE
 *****************************/
 
 .clearfix::after {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }
@@ -48,6 +50,23 @@ html {
 *****************************/
 
 body {
+  font-family: var(--main-stack);
   height: 100%;
-  font-family: var(--main-font-stack);
+  width: 100%;
+  user-select: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.app {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+main {
+  width: 90%;
+  max-width: 720px;
 }

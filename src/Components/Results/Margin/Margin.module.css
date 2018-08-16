@@ -18,3 +18,8 @@
 .adjuster:hover {
   cursor: pointer;
 }
+
+.adjuster:disabled {
+  cursor: default;
+  color: lightgrey;
+}
