@@ -48,6 +48,7 @@ const results = props => {
           selectedItemIndex={props.selectedItemIndex}
           includeHeight={props.includeHeight}
           decreaseMargin={props.decreaseMargin}
+          isMetric={props.isMetric}
         />
         <button
           className={classes.nextButton}

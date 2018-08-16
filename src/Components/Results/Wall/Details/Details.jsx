@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import classes from "./Details.module.css";
 
+import convertToUnit from "./convertToUnit";
+
 const details = props => {
   let { wallWidth, itemWidth, itemQuantity } = props.formValues;
 
@@ -29,13 +31,12 @@ const details = props => {
 
   const position = { left: `${(centerPoint / wallWidth) * 100 - 10}%` };
 
+  console.log(props.isMetric);
   return (
     <Fragment>
       <div className={classes.wrapperOuter} style={position}>
         <div className={classes.wrapperInner}>
-          <p>
-            {centerPoint} {props.isMetric ? `cm` : `in`}
-          </p>
+          <p>{convertToUnit(centerPoint, props.isMetric)}</p>
         </div>
       </div>
       <div className={classes.marker} style={position}>
