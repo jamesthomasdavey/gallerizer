@@ -117,20 +117,27 @@ class App extends Component {
     return (
       <div className="app" onKeyPress={e => this.keyPressHandler(e)}>
         <Nav
-          state={this.state}
+          isMetric={this.state.isMetric}
+          includeHeight={this.state.includeHeight}
           changeUnit={this.changeUnitHandler}
           changeHeightDisplay={this.changeHeightDisplayHandler}
         />
         <main>
           <Form
-            state={this.state}
+            isMetric={this.state.isMetric}
+            includeHeight={this.state.includeHeight}
+            newFormValues={this.state.newFormValues}
             changeValue={this.changeValueHandler}
             reset={this.resetHandler}
             calculate={this.calculateHandler}
-            newFormValues={this.newFormValues}
           />
           <Results
-            state={this.state}
+            isMetric={this.state.isMetric}
+            includeHeight={this.state.includeHeight}
+            formValues={this.state.formValues}
+            margin={this.state.margin}
+            maxMargin={this.state.maxMargin}
+            selectedItemIndex={this.state.selectedItemIndex}
             adjustMargin={this.adjustMarginHandler}
             selectItem={this.selectItemHandler}
             decreaseMargin={this.decreaseMarginHandler}

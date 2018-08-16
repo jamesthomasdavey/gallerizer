@@ -5,14 +5,9 @@ import Margin from "./Margin/Margin";
 import Wall from "./Wall/Wall";
 
 const results = props => {
-  const {
-    wallWidth,
-    itemWidth,
-    itemHeight,
-    itemQuantity
-  } = props.state.formValues;
+  const { wallWidth, itemWidth, itemHeight, itemQuantity } = props.formValues;
 
-  const { includeHeight } = props.state;
+  const { includeHeight } = props;
 
   if (
     !wallWidth ||
@@ -32,11 +27,15 @@ const results = props => {
     <div>
       <Margin
         adjustMargin={event => props.adjustMargin(event)}
-        state={props.state}
+        margin={props.margin}
+        maxMargin={props.maxMargin}
       />
       <Wall
-        state={props.state}
+        formValues={props.formValues}
+        margin={props.margin}
         selectItem={props.selectItem}
+        selectedItemIndex={props.selectedItemIndex}
+        includeHeight={props.includeHeight}
         decreaseMargin={props.decreaseMargin}
       />
     </div>

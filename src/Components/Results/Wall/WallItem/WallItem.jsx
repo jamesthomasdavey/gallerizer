@@ -2,9 +2,9 @@ import React from "react";
 import classes from "./WallItem.module.css";
 
 const wallItem = props => {
-  const { itemWidth, wallWidth, itemHeight } = props.state.formValues;
+  const { itemWidth, wallWidth, itemHeight } = props.formValues;
 
-  const { margin, includeHeight, selectedItemIndex } = props.state;
+  const { margin, includeHeight, selectedItemIndex } = props;
 
   const getWallItemWidthPercent = () => {
     let innerWallWidthPercent = 100 - margin * 2;

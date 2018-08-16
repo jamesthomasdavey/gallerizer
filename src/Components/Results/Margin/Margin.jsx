@@ -3,7 +3,7 @@ import classes from "./Margin.module.css";
 
 const margin = props => {
   const getDecreaseButton = () => {
-    if (props.state.margin > 0) {
+    if (props.margin > 0) {
       return (
         <button
           className={classes.adjuster}
@@ -23,7 +23,7 @@ const margin = props => {
   };
 
   const getIncreaseButton = () => {
-    if (props.state.margin + 1 <= props.state.maxMargin) {
+    if (props.margin + 1 <= props.maxMargin) {
       return (
         <button
           className={classes.adjuster}
@@ -45,7 +45,7 @@ const margin = props => {
   return (
     <div className={classes.wrapper}>
       {getDecreaseButton()}
-      <span>Add Margin: {props.state.margin}%</span>
+      <span>Add Margin: {props.margin}%</span>
       {getIncreaseButton()}
     </div>
   );

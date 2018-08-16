@@ -1,5 +1,53 @@
-body {
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+
+/*****************************
+******************* VARIABLES
+*****************************/
+
+/* colors */
+
+/* :root {
+} */
+
+/* fonts */
+
+:root {
+  --main-font-stack: "Open Sans", sans-serif;
+}
+
+/* dimensions */
+
+/* :root {
+} */
+
+/*****************************
+************************ BASE
+*****************************/
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+}
+
+/*****************************
+********************* GENERAL
+*****************************/
+
+body {
+  height: 100%;
+  font-family: var(--main-font-stack);
 }

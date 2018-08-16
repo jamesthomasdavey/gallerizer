@@ -3,19 +3,21 @@ import classes from "./Wall.module.css";
 
 import WallItem from "./WallItem/WallItem";
 import Details from "./Details/Details";
-import Ruler from "./Ruler/Ruler";
 
 const Wall = props => {
   const innerWallStyle = () => {
-    return { width: `${100 - props.state.margin * 2}%` };
+    return { width: `${100 - props.margin * 2}%` };
   };
 
   const wallItems = () => {
     const wallItems = [];
-    for (let i = 0; i < props.state.formValues.itemQuantity; i++) {
+    for (let i = 0; i < props.formValues.itemQuantity; i++) {
       wallItems.push(
         <WallItem
-          state={props.state}
+          formValues={props.formValues}
+          margin={props.margin}
+          includeHeight={props.includeHeight}
+          selectedItemIndex={props.selectedItemIndex}
           key={i}
           index={i}
           selectItem={props.selectItem}
@@ -30,8 +32,12 @@ const Wall = props => {
       <div className={classes.inner} style={innerWallStyle()}>
         {wallItems()}
       </div>
-      <Details state={props.state} />
-      <Ruler state={props.state} />
+      <Details
+        margin={props.margin}
+        selectedItemIndex={props.selectedItemIndex}
+        formValues={props.formValues}
+        isMetric={props.isMetric}
+      />
     </div>
   );
 };

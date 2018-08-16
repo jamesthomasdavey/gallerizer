@@ -1,28 +1,31 @@
-.wrapper {
+.wrapperOuter {
   position: absolute;
-  bottom: 2rem;
-  width: 10%;
-  overflow: visible;
+  display: flex;
+  bottom: 2.4rem;
+  width: 20%;
   z-index: 99;
 }
 
-.wrapper p {
+.wrapperInner {
+  padding: 0.4rem 0.8rem;
+  margin: 0 auto;
+  border: 1px solid grey;
+  border-radius: 6px;
+  background-color: white;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.wrapperInner p {
   font-size: 1rem;
   text-align: center;
-  white-space: nowrap;
-  background-color: white;
-  border-radius: 6px;
-  border: 1px solid grey;
-  padding: 4px;
 }
 
 .marker {
   position: absolute;
   bottom: 0;
-  /* width: 9.722221851349%; */
-  width: 10%;
+  width: 20%;
   height: 100%;
-  /* background-color: blue; */
 }
 
 .marker__inner {

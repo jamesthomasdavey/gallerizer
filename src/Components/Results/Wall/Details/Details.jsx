@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 import classes from "./Details.module.css";
 
 const details = props => {
-  let { wallWidth, itemWidth, itemQuantity } = props.state.formValues;
+  let { wallWidth, itemWidth, itemQuantity } = props.formValues;
 
-  const { margin, selectedItemIndex } = props.state;
+  const { margin, selectedItemIndex } = props;
 
   if (typeof selectedItemIndex !== `number`) {
     return null;
@@ -27,14 +27,16 @@ const details = props => {
     itemWidth / 2 +
     indentation;
 
-  const position = { left: `${(centerPoint / wallWidth) * 100 - 5}%` };
+  const position = { left: `${(centerPoint / wallWidth) * 100 - 10}%` };
 
   return (
     <Fragment>
-      <div className={classes.wrapper} style={position}>
-        <p>
-          {centerPoint} {props.state.isMetric ? `cm` : `in`}
-        </p>
+      <div className={classes.wrapperOuter} style={position}>
+        <div className={classes.wrapperInner}>
+          <p>
+            {centerPoint} {props.isMetric ? `cm` : `in`}
+          </p>
+        </div>
       </div>
       <div className={classes.marker} style={position}>
         <div className={classes.marker__inner} />

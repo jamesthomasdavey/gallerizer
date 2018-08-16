@@ -3,15 +3,16 @@ import React from "react";
 import classes from "./Form.module.css";
 
 const form = props => {
-  const currentUnit = props.state.isMetric ? `cm` : `in`;
-  const { includeHeight, newFormValues } = props.state;
+  const currentUnit = props.isMetric ? `cm` : `in`;
+  const { includeHeight, newFormValues } = props;
 
   return (
     <div className={classes.wrapper}>
       <ul className={classes.form}>
         <li>
           <label>
-            Wall Width ({currentUnit}):
+            Wall Width ({currentUnit}
+            ):
             <input
               type="number"
               data-state="wallWidth"
@@ -22,7 +23,8 @@ const form = props => {
         </li>
         <li>
           <label>
-            Item Width ({currentUnit}):
+            Item Width ({currentUnit}
+            ):
             <input
               type="number"
               data-state="itemWidth"
@@ -34,7 +36,8 @@ const form = props => {
         {includeHeight && (
           <li>
             <label>
-              Item Height ({currentUnit}):
+              Item Height ({currentUnit}
+              ):
               <input
                 type="number"
                 data-state="itemHeight"

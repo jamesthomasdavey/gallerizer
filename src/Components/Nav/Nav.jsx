@@ -11,11 +11,12 @@ const nav = props => {
             <select
               id="unit"
               onChange={props.changeUnit}
-              defaultValue={props.state.isMetric ? "centimeters" : "inches"}
+              defaultValue={props.isMetric ? "centimeters" : "inches"}
             >
               <option value="inches" className="unit">
                 INCHES
-              </option>,
+              </option>
+              ,
               <option value="centimeters" className="unit">
                 CENTIMETERS
               </option>
@@ -24,7 +25,7 @@ const nav = props => {
           <li>
             <input
               type="checkbox"
-              checked={props.state.includeHeight}
+              checked={props.includeHeight}
               id="includeHeight"
               value="Include Height"
               onChange={props.changeHeightDisplay}
