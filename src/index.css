@@ -59,14 +59,3 @@ body {
 ul {
   list-style-type: none;
 }
-
-.app {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-main {
-  width: 90%;
-  max-width: 720px;
-}

@@ -4,7 +4,7 @@
   padding-top: 4rem;
   padding-bottom: 7rem;
   background-color: #f5f5f5;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .inner {

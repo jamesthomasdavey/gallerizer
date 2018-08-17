@@ -9,16 +9,32 @@
   font-weight: 300;
   outline: 0;
   padding: 0 1rem;
-  color: grey;
   transition: 0.3s all ease;
 }
 
 .Results button:hover {
   cursor: pointer;
-  color: black;
 }
 
-.Results button:disabled {
-  cursor: default;
+.Results button span {
+  display: block;
+  color: grey;
+  transition: 0.3s all ease;
+}
+
+.Results button:hover span {
+  color: black;
+  transform: scale(1.1);
+}
+
+.Results button:disabled span {
   color: lightgrey;
+}
+
+.Results button:disabled:hover {
+  cursor: default;
+}
+
+.Results button:disabled:hover span {
+  transform: scale(1);
 }

@@ -39,7 +39,7 @@ const results = props => {
           onClick={() => props.selectItem(props.selectedItemIndex - 1)}
           disabled={props.disablePreviousButton}
         >
-          &laquo;
+          <span>&laquo;</span>
         </button>
         <Wall
           formValues={props.formValues}
@@ -55,7 +55,7 @@ const results = props => {
           onClick={() => props.selectItem(props.selectedItemIndex + 1)}
           disabled={props.disableNextButton}
         >
-          &raquo;
+          <span>&raquo;</span>
         </button>
       </div>
     </div>

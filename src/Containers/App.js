@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import classes from "./App.module.css";
 
 import Nav from "../Components/Nav/Nav";
 import Form from "../Components/Form/Form";
@@ -23,7 +23,8 @@ class App extends Component {
     },
     margin: 0,
     maxMargin: 0,
-    selectedItemIndex: 0
+    selectedItemIndex: 0,
+    navOpen: false
   };
 
   formRef = React.createRef();
@@ -126,44 +127,65 @@ class App extends Component {
     return maxMargin < margin ? maxMargin : margin;
   };
 
+  toggleNavHandler = () => {
+    const currentNavOpen = this.state.navOpen;
+    this.setState({ navOpen: !currentNavOpen });
+  };
+
   render() {
     const disableDecreaseButton = this.state.margin <= 0;
     const disableIncreaseButton = this.state.margin >= this.state.maxMargin;
     const disablePreviousButton = this.state.selectedItemIndex <= 0;
     const disableNextButton =
       this.state.selectedItemIndex + 1 >= this.state.formValues.itemQuantity;
+    const mainClasses = [classes.main];
+    const gearClasses = [classes.GearIcon];
+    if (this.state.navOpen) {
+      mainClasses.push(classes.shift);
+      gearClasses.push(classes.rotate);
+    }
 
     return (
-      <div className="app" onKeyPress={e => this.keyPressHandler(e)}>
+      <div
+        className={classes.wrapper}
+        onKeyPress={e => this.keyPressHandler(e)}
+      >
+        <div
+          className={gearClasses.join(" ")}
+          onClick={this.toggleNavHandler}
+        />
         <Nav
           isMetric={this.state.isMetric}
           includeHeight={this.state.includeHeight}
           changeUnit={this.changeUnitHandler}
           changeHeightDisplay={this.changeHeightDisplayHandler}
+          navOpen={this.state.navOpen}
         />
-        <main>
-          <Form
-            ref={this.formRef}
-            isMetric={this.state.isMetric}
-            includeHeight={this.state.includeHeight}
-            newFormValues={this.state.newFormValues}
-            changeValue={this.changeValueHandler}
-            reset={this.resetHandler}
-            calculate={this.calculateHandler}
-          />
-          <Results
-            isMetric={this.state.isMetric}
-            includeHeight={this.state.includeHeight}
-            formValues={this.state.formValues}
-            selectedItemIndex={this.state.selectedItemIndex}
-            selectItem={this.selectItemHandler}
-            margin={this.state.margin}
-            adjustMargin={this.adjustMarginHandler}
-            disableDecreaseButton={disableDecreaseButton}
-            disableIncreaseButton={disableIncreaseButton}
-            disablePreviousButton={disablePreviousButton}
-            disableNextButton={disableNextButton}
-          />
+        <main className={mainClasses.join(" ")}>
+          <div className={classes.container}>
+            <Form
+              ref={this.formRef}
+              isMetric={this.state.isMetric}
+              includeHeight={this.state.includeHeight}
+              newFormValues={this.state.newFormValues}
+              changeValue={this.changeValueHandler}
+              reset={this.resetHandler}
+              calculate={this.calculateHandler}
+            />
+            <Results
+              isMetric={this.state.isMetric}
+              includeHeight={this.state.includeHeight}
+              formValues={this.state.formValues}
+              selectedItemIndex={this.state.selectedItemIndex}
+              selectItem={this.selectItemHandler}
+              margin={this.state.margin}
+              adjustMargin={this.adjustMarginHandler}
+              disableDecreaseButton={disableDecreaseButton}
+              disableIncreaseButton={disableIncreaseButton}
+              disablePreviousButton={disablePreviousButton}
+              disableNextButton={disableNextButton}
+            />
+          </div>
         </main>
       </div>
     );

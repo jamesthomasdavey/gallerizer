@@ -1,0 +1,48 @@
+.wrapper {
+  /* display: flex;
+  justify-content: space-around; */
+  width: 100%;
+}
+
+.main {
+  width: 100%;
+  transition: 0.4s all ease;
+}
+
+.main.shift {
+  padding-left: 260px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 768px;
+  width: 80%;
+  /* background-color: blue; */
+}
+
+.GearIcon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url("./../Assets/Images/gear.svg");
+  background-size: 42px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 54px;
+  height: 54px;
+  transition: 0.3s all ease;
+  border-radius: 100%;
+  z-index: 1000;
+}
+
+.GearIcon.rotate {
+  transform: rotate(67.5deg);
+}
+
+.GearIcon:hover {
+  cursor: pointer;
+}
+
+/* .GearIcon {
+  background-image: url("./../Assets/")
+}~try */
