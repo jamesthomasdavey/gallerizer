@@ -1,45 +1,47 @@
 import React from "react";
-
 import classes from "./Nav.module.css";
 
-const nav = props => {
-  const wrapperClasses = [classes.wrapper];
-  if (props.navOpen) {
-    wrapperClasses.push(classes.open);
-  }
+import Toggler from "./Toggler/Toggler";
 
+const nav = props => {
   return (
-    <div className={wrapperClasses.join(" ")}>
+    <div
+      className={[classes.wrapper, classes[props.navOpen ? "open" : ""]].join(
+        " "
+      )}
+    >
       <div className="nav__menu">
-        <ul className="nav__menu-list">
-          <li>
+        <ul className={classes.ul}>
+          <li className={classes.li}>
             <input
+              className={classes.input}
               type="checkbox"
               checked={props.isMetric}
               id="isMetric"
               value="Metric"
               onChange={props.changeUnit}
             />
-            <label className={classes.navItem} htmlFor="isMetric">
+            <label className={classes.navLabel} htmlFor="isMetric">
               Metric
+              <Toggler isEnabled={props.isMetric} />
             </label>
           </li>
           <li>
             <input
+              className={classes.input}
               type="checkbox"
               checked={props.includeHeight}
               id="includeHeight"
               value="Include Height"
               onChange={props.changeHeightDisplay}
             />
-            <label className={classes.navItem} htmlFor="includeHeight">
+            <label className={classes.navLabel} htmlFor="includeHeight">
               Incl. Height
+              <Toggler isEnabled={props.includeHeight} />
             </label>
           </li>
           <li>
-            <div id="about">
-              <p className={classes.navItem}>About</p>
-            </div>
+            <label className={classes.navLabel}>About</label>
           </li>
         </ul>
       </div>

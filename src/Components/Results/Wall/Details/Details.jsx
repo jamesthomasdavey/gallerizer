@@ -31,7 +31,6 @@ const details = props => {
 
   const position = { left: `${(centerPoint / wallWidth) * 100 - 10}%` };
 
-  console.log(props.isMetric);
   return (
     <Fragment>
       <div className={classes.wrapperOuter} style={position}>

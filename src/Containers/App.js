@@ -4,6 +4,7 @@ import classes from "./App.module.css";
 import Nav from "../Components/Nav/Nav";
 import Form from "../Components/Form/Form";
 import Results from "../Components/Results/Results";
+import Backdrop from "../Components/Backdrop/Backdrop";
 
 class App extends Component {
   state = {
@@ -132,18 +133,16 @@ class App extends Component {
     this.setState({ navOpen: !currentNavOpen });
   };
 
+  closeNavHandler = () => {
+    this.setState({ navOpen: false });
+  };
+
   render() {
     const disableDecreaseButton = this.state.margin <= 0;
     const disableIncreaseButton = this.state.margin >= this.state.maxMargin;
     const disablePreviousButton = this.state.selectedItemIndex <= 0;
     const disableNextButton =
       this.state.selectedItemIndex + 1 >= this.state.formValues.itemQuantity;
-    const mainClasses = [classes.main];
-    const gearClasses = [classes.GearIcon];
-    if (this.state.navOpen) {
-      mainClasses.push(classes.shift);
-      gearClasses.push(classes.rotate);
-    }
 
     return (
       <div
@@ -151,8 +150,15 @@ class App extends Component {
         onKeyPress={e => this.keyPressHandler(e)}
       >
         <div
-          className={gearClasses.join(" ")}
+          className={[
+            classes.GearIcon,
+            classes[this.state.navOpen ? "rotate" : ""]
+          ].join(" ")}
           onClick={this.toggleNavHandler}
+        />
+        <Backdrop
+          navOpen={this.state.navOpen}
+          closeNav={this.closeNavHandler}
         />
         <Nav
           isMetric={this.state.isMetric}
@@ -161,7 +167,7 @@ class App extends Component {
           changeHeightDisplay={this.changeHeightDisplayHandler}
           navOpen={this.state.navOpen}
         />
-        <main className={mainClasses.join(" ")}>
+        <main className={classes.main}>
           <div className={classes.container}>
             <Form
               ref={this.formRef}

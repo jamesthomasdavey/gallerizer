@@ -3,7 +3,7 @@
   display: flex;
   bottom: 2.4rem;
   width: 20%;
-  z-index: 99;
+  z-index: 150;
 }
 
 .wrapperInner {
@@ -14,6 +14,7 @@
   background-color: white;
   white-space: nowrap;
   overflow: visible;
+  z-index: 151;
 }
 
 .wrapperInner p {
@@ -35,6 +36,6 @@
   /* background: lightpink; */
   /* box-shadow: 0 0 2px lightpink; */
   opacity: 0.6;
-  z-index: 98;
+  z-index: 152;
   border-left: 1px solid lightpink;
 }

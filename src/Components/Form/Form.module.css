@@ -1,19 +1,25 @@
 .wrapper {
   display: block;
+  width: 80%;
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .form {
-  margin: 0 auto;
-  width: 420px;
+  width: 100%;
   /* background-color: red; */
 }
 
 .form li {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
-.form input {
+.form li label {
+  width: 100%;
+}
+
+.form li label input {
   width: 100%;
 }
 

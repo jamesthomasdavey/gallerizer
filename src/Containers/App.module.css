@@ -2,22 +2,18 @@
   /* display: flex;
   justify-content: space-around; */
   width: 100%;
+  height: 100%;
 }
 
 .main {
   width: 100%;
-  transition: 0.4s all ease;
-}
-
-.main.shift {
-  padding-left: 260px;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 768px;
-  width: 80%;
-  /* background-color: blue; */
+  padding-top: 4rem;
+  max-width: 960px;
+  width: 100%;
 }
 
 .GearIcon {
@@ -25,18 +21,18 @@
   left: 0;
   top: 0;
   background-image: url("./../Assets/Images/gear.svg");
-  background-size: 42px;
+  background-size: 36px;
   background-repeat: no-repeat;
   background-position: center center;
   width: 54px;
   height: 54px;
   transition: 0.3s all ease;
   border-radius: 100%;
-  z-index: 1000;
+  z-index: 1100;
 }
 
 .GearIcon.rotate {
-  transform: rotate(67.5deg);
+  transform: rotate(-90deg);
 }
 
 .GearIcon:hover {
