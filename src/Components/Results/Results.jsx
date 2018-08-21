@@ -27,12 +27,6 @@ const results = props => {
 
   return (
     <div className={classes.Results}>
-      <Margin
-        adjustMargin={event => props.adjustMargin(event)}
-        margin={props.margin}
-        disableDecreaseButton={props.disableDecreaseButton}
-        disableIncreaseButton={props.disableIncreaseButton}
-      />
       <div className={classes.innerResults}>
         <button
           className={classes.previousButton}
@@ -58,6 +52,12 @@ const results = props => {
           <span>&raquo;</span>
         </button>
       </div>
+      <Margin
+        adjustMargin={event => props.adjustMargin(event)}
+        margin={props.margin}
+        disableDecreaseButton={props.disableDecreaseButton}
+        disableIncreaseButton={props.disableIncreaseButton}
+      />
     </div>
   );
 };

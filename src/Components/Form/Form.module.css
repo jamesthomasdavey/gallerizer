@@ -1,7 +1,7 @@
 .wrapper {
   display: block;
   width: 80%;
-  max-width: 420px;
+  max-width: 280px;
   margin: 0 auto;
 }
 
@@ -16,22 +16,41 @@
 }
 
 .form li label {
+  display: block;
   width: 100%;
+  padding: 8px 0 4px;
+  letter-spacing: 1px;
 }
 
-.form li label input {
+.form li input {
   width: 100%;
+  padding: 4px 6px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border: none;
+  border-bottom: 1px solid grey;
+  outline: none;
 }
 
 .button {
   display: block;
-  padding: 0.8rem 2rem;
+  padding: 0.7rem 1.8rem;
   background: transparent;
   margin: 1rem auto;
   border-radius: 6px;
   outline: 0;
+  font-size: 1rem;
+  transition: 0.3s all ease;
 }
 
-.button:hover {
+.button:last-child {
+  border: 0;
+  color: grey;
+}
+
+.button:hover,
+.button:last-child:hover {
   cursor: pointer;
+  color: black;
 }

@@ -21,54 +21,58 @@ class Form extends Component {
       <div className={classes.wrapper}>
         <ul className={classes.form}>
           <li>
-            <label>
-              Wall Width ({currentUnit}
+            <label for="wallWidth">
+              WALL WIDTH ({currentUnit}
               ):
-              <input
-                type="number"
-                ref={this.wallWidthInputRef}
-                data-state="wallWidth"
-                onChange={event => this.props.changeValue(event)}
-                value={newFormValues.wallWidth}
-              />
             </label>
+            <input
+              type="number"
+              id="wallWidth"
+              ref={this.wallWidthInputRef}
+              data-state="wallWidth"
+              onChange={event => this.props.changeValue(event)}
+              value={newFormValues.wallWidth}
+            />
           </li>
           <li>
-            <label>
-              Item Width ({currentUnit}
+            <label for="itemWidth">
+              ITEM WIDTH ({currentUnit}
               ):
-              <input
-                type="number"
-                data-state="itemWidth"
-                onChange={event => this.props.changeValue(event)}
-                value={newFormValues.itemWidth}
-              />
             </label>
+            <input
+              type="number"
+              id="itemWidth"
+              data-state="itemWidth"
+              onChange={event => this.props.changeValue(event)}
+              value={newFormValues.itemWidth}
+            />
           </li>
           {includeHeight && (
             <li>
-              <label>
-                Item Height ({currentUnit}
+              <label for="itemHeight">
+                ITEM HEIGHT ({currentUnit}
                 ):
-                <input
-                  type="number"
-                  data-state="itemHeight"
-                  onChange={event => this.props.changeValue(event)}
-                  value={newFormValues.itemHeight}
-                />
               </label>
+              <input
+                type="number"
+                id="itemHeight"
+                data-state="itemHeight"
+                onChange={event => this.props.changeValue(event)}
+                value={newFormValues.itemHeight}
+              />
             </li>
           )}
           <li>
-            <label>
-              Item Quantity:
-              <input
-                type="number"
-                data-state="itemQuantity"
-                onChange={event => this.props.changeValue(event)}
-                value={newFormValues.itemQuantity}
-              />
+            <label for="itemQuantity">
+              ITEM QUANTITY:
             </label>
+            <input
+              type="number"
+              id="itemQuantity"
+              data-state="itemQuantity"
+              onChange={event => this.props.changeValue(event)}
+              value={newFormValues.itemQuantity}
+            />
           </li>
         </ul>
         <button className={classes.button} onClick={this.props.calculate}>

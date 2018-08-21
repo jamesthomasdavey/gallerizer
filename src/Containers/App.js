@@ -138,12 +138,6 @@ class App extends Component {
   };
 
   render() {
-    const disableDecreaseButton = this.state.margin <= 0;
-    const disableIncreaseButton = this.state.margin >= this.state.maxMargin;
-    const disablePreviousButton = this.state.selectedItemIndex <= 0;
-    const disableNextButton =
-      this.state.selectedItemIndex + 1 >= this.state.formValues.itemQuantity;
-
     return (
       <div
         className={classes.wrapper}
@@ -186,10 +180,13 @@ class App extends Component {
               selectItem={this.selectItemHandler}
               margin={this.state.margin}
               adjustMargin={this.adjustMarginHandler}
-              disableDecreaseButton={disableDecreaseButton}
-              disableIncreaseButton={disableIncreaseButton}
-              disablePreviousButton={disablePreviousButton}
-              disableNextButton={disableNextButton}
+              disableDecreaseButton={this.state.margin <= 0}
+              disableIncreaseButton={this.state.margin >= this.state.maxMargin}
+              disablePreviousButton={this.state.selectedItemIndex <= 0}
+              disableNextButton={
+                this.state.selectedItemIndex + 1 >=
+                this.state.formValues.itemQuantity
+              }
             />
           </div>
         </main>
