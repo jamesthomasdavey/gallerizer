@@ -18,9 +18,9 @@ const about = props => (
       <br />
       <a href="mailto:james.t.davey@gmail.com">james.t.davey@gmail.com</a>
     </p>
-    <div onClick={props.closeAbout} className={classes.closeButton}>
+    <button onClick={props.closeAbout} className={classes.closeButton}>
       Close
-    </div>
+    </button>
   </div>
 );
 

@@ -91,7 +91,7 @@ class App extends Component {
   };
 
   changeValueHandler = event => {
-    const dataState = event.target.getAttribute(`data-state`);
+    const dataState = event.target.getAttribute(`id`);
     const newValue = event.target.value;
     const previousFormValues = { ...this.state.newFormValues };
     previousFormValues[dataState] = newValue;

@@ -28,10 +28,15 @@
 }
 
 .closeButton {
-  text-align: center;
+  /* text-align: center; */
+  display: block;
+  margin: 0 auto;
   padding: 1rem;
-  color: #777;
   transition: 0.3s all ease;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #777;
 }
 
 .closeButton:hover {

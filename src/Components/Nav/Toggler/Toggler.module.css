@@ -23,6 +23,17 @@
 }
 
 .wrapper.isEnabled {
+  background-color: #6491d1;
+  border: 2px solid #6491d1;
+}
+
+.circle.isEnabled {
+  border: 2px solid #6491d1;
+  position: absolute;
+  left: 18px;
+}
+
+/* .wrapper.isEnabled {
   background-color: #03cd54;
   border: 2px solid #03cd54;
 }
@@ -31,4 +42,4 @@
   border: 2px solid #03cd54;
   position: absolute;
   left: 18px;
-}
+} */

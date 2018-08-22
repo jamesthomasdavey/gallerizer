@@ -26,10 +26,10 @@ class Form extends Component {
               ):
             </label>
             <input
+              maxLength="4"
               type="number"
               id="wallWidth"
               ref={this.wallWidthInputRef}
-              data-state="wallWidth"
               onChange={event => this.props.changeValue(event)}
               value={newFormValues.wallWidth}
             />
@@ -40,9 +40,9 @@ class Form extends Component {
               ):
             </label>
             <input
+              maxLength="3"
               type="number"
               id="itemWidth"
-              data-state="itemWidth"
               onChange={event => this.props.changeValue(event)}
               value={newFormValues.itemWidth}
             />
@@ -54,9 +54,9 @@ class Form extends Component {
                 ):
               </label>
               <input
+                maxLength="3"
                 type="number"
                 id="itemHeight"
-                data-state="itemHeight"
                 onChange={event => this.props.changeValue(event)}
                 value={newFormValues.itemHeight}
               />
@@ -65,9 +65,9 @@ class Form extends Component {
           <li>
             <label htmlFor="itemQuantity">ITEM QUANTITY:</label>
             <input
+              maxLength="3"
               type="number"
               id="itemQuantity"
-              data-state="itemQuantity"
               onChange={event => this.props.changeValue(event)}
               value={newFormValues.itemQuantity}
             />
