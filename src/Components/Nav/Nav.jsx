@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Nav.module.css";
 
 import Toggler from "./Toggler/Toggler";
+import About from "./About/About";
 
 const nav = props => {
   return (
@@ -36,15 +37,18 @@ const nav = props => {
               onChange={props.changeHeightDisplay}
             />
             <label className={classes.navLabel} htmlFor="includeHeight">
-              Incl. Height
+              Height
               <Toggler isEnabled={props.includeHeight} />
             </label>
           </li>
           <li>
-            <label className={classes.navLabel}>About</label>
+            <label className={classes.navLabel} onClick={props.openAbout}>
+              About
+            </label>
           </li>
         </ul>
       </div>
+      <About aboutOpen={props.aboutOpen} closeAbout={props.closeAbout} />
     </div>
   );
 };

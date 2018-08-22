@@ -1,7 +1,7 @@
 .wrapper {
   display: block;
   width: 80%;
-  max-width: 280px;
+  max-width: 220px;
   margin: 0 auto;
 }
 
@@ -20,16 +20,18 @@
   width: 100%;
   padding: 8px 0 4px;
   letter-spacing: 1px;
+  text-align: center;
+  color: #797979;
 }
 
 .form li input {
   width: 100%;
-  padding: 4px 6px;
+  padding: 6px 8px;
   margin-bottom: 4px;
   font-size: 14px;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   border: none;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #ddd;
   outline: none;
 }
 
@@ -38,19 +40,28 @@
   padding: 0.7rem 1.8rem;
   background: transparent;
   margin: 1rem auto;
+  /* border: 1px solid #1967d2; */
+  border: none;
   border-radius: 6px;
   outline: 0;
   font-size: 1rem;
   transition: 0.3s all ease;
 }
 
-.button:last-child {
-  border: 0;
-  color: grey;
+.button:hover {
+  cursor: pointer;
 }
 
-.button:hover,
-.button:last-child:hover {
-  cursor: pointer;
-  color: black;
+.Calculate {
+  background: #6491d1;
+  color: white;
+}
+
+.Reset {
+  background: #fff;
+  color: #6491d1;
+}
+
+.Calculate:hover {
+  background: #1967d2;
 }

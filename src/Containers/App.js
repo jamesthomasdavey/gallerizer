@@ -25,7 +25,8 @@ class App extends Component {
     margin: 0,
     maxMargin: 0,
     selectedItemIndex: 0,
-    navOpen: false
+    navOpen: false,
+    aboutOpen: false
   };
 
   formRef = React.createRef();
@@ -104,10 +105,14 @@ class App extends Component {
       newState.selectedItemIndex,
       newState.newFormValues.itemQuantity
     );
+    newState.selectedItemIndex = this.increaseSelectedItemIndex(
+      newState.selectedItemIndex
+    );
     newState.margin = this.decreaseMarginHandler(
       newState.margin,
       newState.maxMargin
     );
+    newState.margin = this.increaseMarginHander(newState.margin);
     newState.formValues = newState.newFormValues;
     this.setState(newState);
   };
@@ -124,17 +129,33 @@ class App extends Component {
       : selectedItemIndex;
   };
 
+  increaseSelectedItemIndex = selectedItemIndex => {
+    return selectedItemIndex < 0 ? 0 : selectedItemIndex;
+  };
+
   decreaseMarginHandler = (margin, maxMargin) => {
     return maxMargin < margin ? maxMargin : margin;
   };
 
+  increaseMarginHander = margin => {
+    return margin < 0 ? 0 : margin;
+  };
+
   toggleNavHandler = () => {
     const currentNavOpen = this.state.navOpen;
-    this.setState({ navOpen: !currentNavOpen });
+    this.setState({ navOpen: !currentNavOpen, aboutOpen: false });
   };
 
   closeNavHandler = () => {
-    this.setState({ navOpen: false });
+    this.setState({ navOpen: false, aboutOpen: false });
+  };
+
+  openAboutHandler = () => {
+    this.setState({ aboutOpen: true });
+  };
+
+  closeAboutHandler = () => {
+    this.setState({ aboutOpen: false });
   };
 
   render() {
@@ -160,6 +181,9 @@ class App extends Component {
           changeUnit={this.changeUnitHandler}
           changeHeightDisplay={this.changeHeightDisplayHandler}
           navOpen={this.state.navOpen}
+          aboutOpen={this.state.aboutOpen}
+          openAbout={this.openAboutHandler}
+          closeAbout={this.closeAboutHandler}
         />
         <main className={classes.main}>
           <div className={classes.container}>

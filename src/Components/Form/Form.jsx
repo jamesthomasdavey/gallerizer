@@ -21,7 +21,7 @@ class Form extends Component {
       <div className={classes.wrapper}>
         <ul className={classes.form}>
           <li>
-            <label for="wallWidth">
+            <label htmlFor="wallWidth">
               WALL WIDTH ({currentUnit}
               ):
             </label>
@@ -35,7 +35,7 @@ class Form extends Component {
             />
           </li>
           <li>
-            <label for="itemWidth">
+            <label htmlFor="itemWidth">
               ITEM WIDTH ({currentUnit}
               ):
             </label>
@@ -49,7 +49,7 @@ class Form extends Component {
           </li>
           {includeHeight && (
             <li>
-              <label for="itemHeight">
+              <label htmlFor="itemHeight">
                 ITEM HEIGHT ({currentUnit}
                 ):
               </label>
@@ -63,9 +63,7 @@ class Form extends Component {
             </li>
           )}
           <li>
-            <label for="itemQuantity">
-              ITEM QUANTITY:
-            </label>
+            <label htmlFor="itemQuantity">ITEM QUANTITY:</label>
             <input
               type="number"
               id="itemQuantity"
@@ -75,11 +73,17 @@ class Form extends Component {
             />
           </li>
         </ul>
-        <button className={classes.button} onClick={this.props.calculate}>
+        <button
+          className={[classes.button, classes.Calculate].join(" ")}
+          onClick={this.props.calculate}
+        >
           Calculate
         </button>
-        <button className={classes.button} onClick={this.props.reset}>
-          Reset
+        <button
+          className={[classes.button, classes.Reset].join(" ")}
+          onClick={this.props.reset}
+        >
+          Clear
         </button>
       </div>
     );

@@ -23,6 +23,13 @@ const results = props => {
 
   if (itemWidth * itemQuantity > wallWidth) {
     return <Error errorCode={1} />;
+  } else if (
+    itemWidth < 0 ||
+    itemQuantity < 0 ||
+    wallWidth < 0 ||
+    (includeHeight && itemHeight < 0)
+  ) {
+    return <Error errorCode={2} />;
   }
 
   return (

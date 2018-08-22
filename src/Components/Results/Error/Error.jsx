@@ -1,10 +1,22 @@
-import React from 'react';
+import React from "react";
+import classes from "./Error.module.css";
 
 const error = props => {
-  if (props.errorCode === 1) {
-    return <p>Not enough wall space!</p>;
+  let errorString;
+  switch (props.errorCode) {
+    case 1:
+      errorString = "Not enough wall space!";
+      break;
+    case 2:
+      errorString = "Please use only positive values.";
+      break;
+    default:
+      errorString = null;
+      break;
   }
-  return null;
-}
+  return (
+    <p className={classes.wrapper}>{errorString}</p>
+  )
+};
 
 export default error;

@@ -19,17 +19,17 @@
 
 .Results button span {
   display: block;
-  color: grey;
+  color: #666;
   transition: 0.3s all ease;
 }
 
 .Results button:hover span {
   color: black;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .Results button:disabled span {
-  color: lightgrey;
+  color: #ddd;
 }
 
 .Results button:disabled:hover {

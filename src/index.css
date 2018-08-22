@@ -1,10 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
-
 /*****************************
 ******************* VARIABLES
 *****************************/
 
 /* colors */
+:root {
+  --white: #fff;
+  --grey00: #ddd;
+  --grey01: #777;
+}
 
 /* fonts */
 
