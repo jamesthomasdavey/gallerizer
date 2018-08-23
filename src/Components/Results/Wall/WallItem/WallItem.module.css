@@ -1,10 +1,10 @@
 .wrapper {
   position: relative;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  background-color: #fff;
+  border: 1px solid #ddd;
   box-shadow: 2px 2px 4px #bbbbbb;
   font-size: 1.4rem;
-  color: #2b3039;
+  color: #222;
   transition: 0.2s all ease;
   z-index: 200;
 }

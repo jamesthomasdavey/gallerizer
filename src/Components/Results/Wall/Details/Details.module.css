@@ -9,7 +9,7 @@
 .wrapperInner {
   padding: 0.4rem 0.8rem;
   margin: 0 auto;
-  border: 1px solid grey;
+  border: 1px solid #ddd;
   border-radius: 6px;
   background-color: white;
   white-space: nowrap;
@@ -19,6 +19,7 @@
 
 .wrapperInner p {
   font-size: 1rem;
+  color: #222;
   text-align: center;
 }
 
@@ -31,11 +32,12 @@
 
 .marker__inner {
   margin: 0 auto;
-  width: 2px;
+  width: 3px;
   height: 100%;
-  /* background: lightpink; */
-  /* box-shadow: 0 0 2px lightpink; */
+  background: rgba(255, 182, 193, 0.7);
+  box-shadow: 0 0 2px rgba(255, 182, 193, 0.7);
   opacity: 0.6;
   z-index: 152;
-  border-left: 1px solid lightpink;
+  /* transition: 0.3s all ease; */
+  /* border-left: 1px solid lightpink; */
 }

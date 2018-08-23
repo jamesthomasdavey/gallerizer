@@ -16,7 +16,26 @@ const about = props => (
     <p>
       Contact:
       <br />
-      <a href="mailto:james.t.davey@gmail.com">james.t.davey@gmail.com</a>
+      <a href="mailto:james.t.davey@gmail.com">james.t.davey@gmail.com</a>.
+    </p>
+    <p>
+      Gear icon by{" "}
+      <a
+        href="https://smashicons.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Smashicons
+      </a>{" "}
+      from{" "}
+      <a
+        href="https://www.flaticon.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        www.flaticon.com
+      </a>
+      .
     </p>
     <button onClick={props.closeAbout} className={classes.closeButton}>
       Close

@@ -19,12 +19,11 @@
 
 .Results button span {
   display: block;
-  color: #666;
+  color: #222;
   transition: 0.3s all ease;
 }
 
 .Results button:hover span {
-  color: black;
   transform: scale(1.2);
 }
 
