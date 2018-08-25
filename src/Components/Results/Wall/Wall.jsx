@@ -10,21 +10,6 @@ const Wall = props => {
   };
 
   const wallItems = () => {
-    // const wallItems = [];
-    // for (let i = 0; i < props.formValues.itemQuantity; i++) {
-    //   wallItems.push(
-    //     <WallItem
-    //       formValues={props.formValues}
-    //       margin={props.margin}
-    //       includeHeight={props.includeHeight}
-    //       selectedItemIndex={props.selectedItemIndex}
-    //       key={i}
-    //       index={i}
-    //       selectItem={props.selectItem}
-    //     />
-    //   );
-    // }
-    // return wallItems;
     return Array(Number(props.formValues.itemQuantity))
       .fill("_")
       .map((item, index) => {
