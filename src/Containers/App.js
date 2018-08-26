@@ -5,6 +5,7 @@ import Nav from "../Components/Nav/Nav";
 import Form from "../Components/Form/Form";
 import Results from "../Components/Results/Results";
 import Backdrop from "../Components/Backdrop/Backdrop";
+import Toolbar from "../Components/Toolbar/Toolbar";
 
 class App extends Component {
   state = {
@@ -171,6 +172,7 @@ class App extends Component {
           ].join(" ")}
           onClick={this.toggleNavHandler}
         />
+        <Toolbar />
         <Backdrop
           navOpen={this.state.navOpen}
           closeNav={this.closeNavHandler}

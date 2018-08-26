@@ -1,40 +1,43 @@
 .innerResults {
   display: flex;
-  overflow: scroll;
 }
 
-.Results button {
-  background: transparent;
+.back,
+.forward {
+  background: #99afd4;
+  color: #fff;
+  display: flex;
   border: none;
+  width: 2.2rem;
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 500;
   outline: 0;
-  padding: 0 0.75rem;
   transition: 0.3s all ease;
+  justify-content: space-around;
+  align-content: center;
 }
 
-.Results button:hover {
+@media (min-width: 960px) {
+  .back {
+    border-radius: 1.1rem 0 0 1.1rem;
+  }
+  .forward {
+    border-radius: 0 1.1rem 1.1rem 0;
+  }
+}
+
+.back:hover,
+.forward:hover {
   cursor: pointer;
+  background: #4f5d75;
 }
 
-.Results button span {
-  display: block;
-  color: #222;
-  transition: 0.3s all ease;
+.back:disabled,
+.forward:disabled {
+  background: #dee4ee;
 }
 
-.Results button:hover span {
-  transform: scale(1.2);
-}
-
-.Results button:disabled span {
-  color: #ddd;
-}
-
-.Results button:disabled:hover {
+.back:disabled:hover,
+.forward:disabled:hover {
   cursor: default;
-}
-
-.Results button:disabled:hover span {
-  transform: scale(1);
 }

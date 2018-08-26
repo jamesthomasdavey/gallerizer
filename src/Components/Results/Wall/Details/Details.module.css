@@ -7,19 +7,22 @@
 }
 
 .wrapperInner {
-  padding: 0.4rem 0.8rem;
+  height: 2.2rem;
+  padding: 0 0.8rem;
   margin: 0 auto;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  border: 2px solid #ddd;
+  border-radius: 1.1rem;
   background-color: white;
   white-space: nowrap;
   overflow: visible;
   z-index: 151;
+  display: flex;
+  align-items: center;
 }
 
 .wrapperInner p {
   font-size: 1rem;
-  color: #222;
+  color: #333;
   text-align: center;
 }
 
@@ -34,8 +37,8 @@
   margin: 0 auto;
   width: 3px;
   height: 100%;
-  background: rgba(255, 182, 193, 0.7);
-  box-shadow: 0 0 2px rgba(255, 182, 193, 0.7);
+  background: rgba(209, 100, 101, 0.7);
+  box-shadow: 0 0 2px rgba(209, 100, 101, 0.7);
   opacity: 0.6;
   z-index: 152;
   /* transition: 0.3s all ease; */

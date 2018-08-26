@@ -6,14 +6,22 @@
 :root {
   --white: #fff;
   --grey00: #ddd;
-  --grey01: #777;
-  --black: #222;
+  --grey01: #a7a3a0;
+  --black: #333;
+  --body-bg: #f8f4f1;
+  --base-blue-: #c6d7ef;
+  --main-blue: #6491d1;
+  --accent-blue: #2a66ba;
+  --base-red: #e7a8a8;
+  --main-red: #d16465;
+  --accent-red: #ba2a2c;
+  --main-space: #4f5d75;
 }
 
 /* fonts */
 
 :root {
-  --main-stack: "Open Sans", sans-serif;
+  --main-stack: Quicksand, sans-serif;
 }
 
 /* dimensions */
@@ -48,14 +56,17 @@ html {
 
 body {
   font-family: var(--main-stack);
+  font-weight: 500;
   height: 100%;
   user-select: none;
-  /* background-image: url("./Assets/Images/wallpaper02.png"); */
-  /* background-size: 50%; */
-  /* background-position: center center; */
-  /* box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.3); */
+  background: #fff7f4;
 }
 
 ul {
   list-style-type: none;
+}
+
+button {
+  font-family: var(--main-stack);
+  font-weight: 500;
 }

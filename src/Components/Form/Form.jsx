@@ -22,7 +22,7 @@ class Form extends Component {
         <ul className={classes.form}>
           <li>
             <label htmlFor="wallWidth">
-              WALL WIDTH ({currentUnit}
+              Wall Width ({currentUnit}
               ):
             </label>
             <input
@@ -36,7 +36,7 @@ class Form extends Component {
           </li>
           <li>
             <label htmlFor="itemWidth">
-              ITEM WIDTH ({currentUnit}
+              Item Width ({currentUnit}
               ):
             </label>
             <input
@@ -50,7 +50,7 @@ class Form extends Component {
           {includeHeight && (
             <li>
               <label htmlFor="itemHeight">
-                ITEM HEIGHT ({currentUnit}
+                Item Height ({currentUnit}
                 ):
               </label>
               <input
@@ -63,7 +63,7 @@ class Form extends Component {
             </li>
           )}
           <li>
-            <label htmlFor="itemQuantity">ITEM QUANTITY:</label>
+            <label htmlFor="itemQuantity">Item Quantity:</label>
             <input
               maxLength="3"
               type="number"

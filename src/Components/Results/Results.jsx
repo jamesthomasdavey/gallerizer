@@ -36,7 +36,7 @@ const results = props => {
     <div className={classes.Results}>
       <div className={classes.innerResults}>
         <button
-          className={classes.previousButton}
+          className={classes.back}
           onClick={() => props.selectItem(props.selectedItemIndex - 1)}
           disabled={props.disablePreviousButton}
         >
@@ -52,7 +52,7 @@ const results = props => {
           isMetric={props.isMetric}
         />
         <button
-          className={classes.nextButton}
+          className={classes.forward}
           onClick={() => props.selectItem(props.selectedItemIndex + 1)}
           disabled={props.disableNextButton}
         >

@@ -7,11 +7,14 @@ const about = props => (
       " "
     )}
   >
-    <p>To use the Gallerizer, enter the parameters as labeled.</p>
     <p>
-      Measuring from edge to edge, the results will indicate where to place each
-      hook on the wall, assuming that each item is hung from the middle. This
-      will ensure an even amount of wall space between each item.
+      Use the Gallerizer to visualize and measure the even placement of decor
+      items on your wall.
+    </p>
+    <p>
+      Measuring from the left edge, the results indicate where to place each
+      hook on the wall, given that each item is hung from the middle. This will
+      ensure an even amount of space between each item.
     </p>
     <p>
       Contact:
@@ -21,19 +24,11 @@ const about = props => (
     <p>
       Gear icon by{" "}
       <a
-        href="https://smashicons.com/"
+        href="https://www.behance.net/pio-5"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Smashicons
-      </a>{" "}
-      from{" "}
-      <a
-        href="https://www.flaticon.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        www.flaticon.com
+        Egor Rumyantsev
       </a>
       .
     </p>

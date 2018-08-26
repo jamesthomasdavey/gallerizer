@@ -1,39 +1,51 @@
 .wrapper {
-  color: #222;
+  color: #fff;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 300px;
-  margin: 0 auto;
-  align-items: center;
-  padding: 2rem;
+  margin: 1rem auto 1rem;
+  height: 2.4rem;
+  border-radius: 1.4rem;
+  background: #d16465;
 }
 
 .wrapper button {
   font-size: 1.2rem;
 }
 
-.wrapper span {
-  text-transform: uppercase;
+.adjuster {
+  border: 2px solid #fff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  background: #d16465;
+  color: #fff;
+  outline: none;
+  transition: 0.2s all ease;
+  padding-bottom: 2px;
 }
 
-.adjuster {
-  transform: translateY(-2px);
-  padding: 1rem 1.2rem;
-  border: none;
-  outline: none;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #222;
-  display: flex;
-  align-items: center;
+.adjuster:first-child {
+  transform: translateX(0.2rem);
+}
+
+.adjuster:last-child {
+  transform: translateX(-0.2rem);
 }
 
 .adjuster:hover {
   cursor: pointer;
+  background: #ba2a2c;
 }
 
 .adjuster:disabled {
+  color: transparent;
+  border: none;
+}
+
+.adjuster:disabled:hover {
   cursor: default;
-  color: #ddd;
+  background: transparent;
 }

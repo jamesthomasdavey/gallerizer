@@ -3,43 +3,31 @@
   height: 32px;
   width: 52px;
   background-color: white;
-  border: 2px solid lightgrey;
+  border: 2px solid #ddd;
   border-radius: 16px;
   overflow: hidden;
   transition: 0.2s all ease;
 }
 
 .circle {
-  /* background-color: blue; */
   height: 32px;
   width: 32px;
   position: absolute;
   left: -2px;
   top: -2px;
   background-color: white;
-  border: 2px solid lightgrey;
+  border: 2px solid #ddd;
   border-radius: 50%;
   transition: 0.2s all ease;
 }
 
 .wrapper.isEnabled {
-  background-color: #6491d1;
-  border: 2px solid #6491d1;
+  background-color: #99afd4;
+  border: 2px solid #99afd4;
 }
 
 .circle.isEnabled {
-  border: 2px solid #6491d1;
+  border: 2px solid #99afd4;
   position: absolute;
   left: 18px;
 }
-
-/* .wrapper.isEnabled {
-  background-color: #03cd54;
-  border: 2px solid #03cd54;
-}
-
-.circle.isEnabled {
-  border: 2px solid #03cd54;
-  position: absolute;
-  left: 18px;
-} */

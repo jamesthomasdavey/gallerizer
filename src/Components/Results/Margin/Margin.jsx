@@ -15,7 +15,7 @@ const margin = props => {
       <span>Add Margin: {props.margin}%</span>
       <button
         className={classes.adjuster}
-        data-type="increase" 
+        data-type="increase"
         onClick={props.adjustMargin}
         disabled={props.disableIncreaseButton}
       >

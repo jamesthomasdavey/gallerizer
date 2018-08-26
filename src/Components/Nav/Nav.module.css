@@ -4,15 +4,17 @@
   position: absolute;
   width: 100%;
   left: -100%;
+  opacity: 0;
   top: 0;
   height: 100%;
   z-index: 1000;
-  transition: 0.3s all ease;
-  background-color: white;
+  transition: 0.2s all ease;
+  background-color: #fff7f4;
 }
 
 .wrapper.open {
   left: 0;
+  opacity: 1;
 }
 
 .ul {
@@ -32,10 +34,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   width: 100%;
-  transition: 0.3s all ease;
-  color: #222;
+  transition: 0.2s all ease;
+  color: #333;
 }
 
 .navLabel:hover {
@@ -45,7 +47,7 @@
 
 @media (min-width: 500px) {
   .wrapper {
-    width: 260px;
-    left: -260px;
+    width: 280px;
+    left: -280px;
   }
 }
