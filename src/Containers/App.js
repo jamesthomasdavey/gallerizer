@@ -159,6 +159,17 @@ class App extends Component {
     this.setState({ aboutOpen: false });
   };
 
+  unselectAllHandler = e => {
+    if (
+      e.target.getAttribute("id") !== "wallItem" &&
+      e.target.getAttribute("id") !== "innerDetails" &&
+      e.target.getAttribute("id") !== "innerParagraph" &&
+      e.target.getAttribute("id") !== "innerMarker"
+    ) {
+      this.setState({ selectedItemIndex: -1000 });
+    }
+  };
+
   render() {
     return (
       <div
@@ -211,8 +222,10 @@ class App extends Component {
               disablePreviousButton={this.state.selectedItemIndex <= 0}
               disableNextButton={
                 this.state.selectedItemIndex + 1 >=
-                this.state.formValues.itemQuantity
+                this.state.formValues.itemQuantity ||
+                this.state.selectedItemIndex < 0
               }
+              unselectAll={this.unselectAllHandler}
             />
           </div>
         </main>

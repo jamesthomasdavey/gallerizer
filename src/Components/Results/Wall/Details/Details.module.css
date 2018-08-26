@@ -37,8 +37,8 @@
   margin: 0 auto;
   width: 3px;
   height: 100%;
-  background: rgba(209, 100, 101, 0.7);
-  box-shadow: 0 0 2px rgba(209, 100, 101, 0.7);
+  background: rgba(209, 100, 101, 0.5);
+  box-shadow: 0 0 2px rgba(209, 100, 101, 0.5);
   opacity: 0.6;
   z-index: 152;
   /* transition: 0.3s all ease; */

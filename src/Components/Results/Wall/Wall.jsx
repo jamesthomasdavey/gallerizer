@@ -28,8 +28,12 @@ const Wall = props => {
   };
 
   return (
-    <div className={classes.outer}>
-      <div className={classes.inner} style={innerWallStyle()}>
+    <div
+      className={classes.outer}
+      id="outer"
+      onClick={e => props.unselectAll(e)}
+    >
+      <div className={classes.inner} id="inner" style={innerWallStyle()}>
         {wallItems()}
       </div>
       <Details

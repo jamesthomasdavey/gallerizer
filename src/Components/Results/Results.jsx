@@ -50,6 +50,7 @@ const results = props => {
           includeHeight={props.includeHeight}
           decreaseMargin={props.decreaseMargin}
           isMetric={props.isMetric}
+          unselectAll={props.unselectAll}
         />
         <button
           className={classes.forward}

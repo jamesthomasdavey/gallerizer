@@ -29,6 +29,7 @@ const wallItem = props => {
   const getWallItemClass = index => {
     let className = [classes.wrapper];
     className.push(selectedItemIndex === index ? classes.active : null);
+    className.push("wallItem");
     return className.join(` `);
   };
 
@@ -36,6 +37,7 @@ const wallItem = props => {
     <div
       className={getWallItemClass(props.index)}
       style={wallItemStyle}
+      id="wallItem"
       onClick={() => props.selectItem(props.index)}
     >
       <div className={classes.content}>

@@ -34,12 +34,12 @@ const details = props => {
   return (
     <Fragment>
       <div className={classes.wrapperOuter} style={position}>
-        <div className={classes.wrapperInner}>
-          <p>{convertToUnit(centerPoint, props.isMetric)}</p>
+        <div className={classes.wrapperInner} id="innerDetails">
+          <p id="innerParagraph">{convertToUnit(centerPoint, props.isMetric)}</p>
         </div>
       </div>
       <div className={classes.marker} style={position}>
-        <div className={classes.marker__inner} />
+        <div className={classes.marker__inner} id="innerMarker"/>
       </div>
     </Fragment>
   );
