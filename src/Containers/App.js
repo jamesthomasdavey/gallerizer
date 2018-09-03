@@ -222,7 +222,7 @@ class App extends Component {
               disablePreviousButton={this.state.selectedItemIndex <= 0}
               disableNextButton={
                 this.state.selectedItemIndex + 1 >=
-                this.state.formValues.itemQuantity ||
+                  this.state.formValues.itemQuantity ||
                 this.state.selectedItemIndex < 0
               }
               unselectAll={this.unselectAllHandler}

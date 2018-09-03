@@ -1,3 +1,16 @@
+.Results {
+  animation: loadResults 0.25s ease;
+}
+
+@keyframes loadResults {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .innerResults {
   display: flex;
 }

@@ -10,6 +10,7 @@
   background-color: #fff;
   overflow: visible;
   z-index: 100;
+  /* animation: loadWall 0.25s ease; */
 }
 
 .inner {

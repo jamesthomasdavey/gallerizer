@@ -1,7 +1,7 @@
 .wrapper {
   width: 100%;
   height: 50px;
-  background-color: #4F5D75;
+  background-color: #4f5d75;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -11,4 +11,5 @@
   color: white;
   font-weight: 500;
   font-size: 1.6rem;
+  letter-spacing: 2px;
 }
