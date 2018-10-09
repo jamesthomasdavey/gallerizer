@@ -1,5 +1,15 @@
 .Results {
+  -webkit-animation: loadResults 0.25s ease;
   animation: loadResults 0.25s ease;
+}
+
+@-webkit-keyframes loadResults {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes loadResults {
@@ -12,6 +22,8 @@
 }
 
 .innerResults {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -19,14 +31,19 @@
 .forward {
   background: #99afd4;
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border: none;
   width: 2.2rem;
   font-size: 2rem;
   font-weight: 500;
   outline: 0;
+  -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
+  -ms-flex-line-pack: center;
   align-content: center;
 }
 

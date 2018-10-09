@@ -1,5 +1,7 @@
 .wrapperOuter {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   bottom: 2.4rem;
   width: 20%;
@@ -16,7 +18,11 @@
   white-space: nowrap;
   overflow: visible;
   z-index: 151;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -38,6 +44,7 @@
   width: 3px;
   height: 100%;
   background: rgba(209, 100, 101, 0.5);
+  -webkit-box-shadow: 0 0 2px rgba(209, 100, 101, 0.5);
   box-shadow: 0 0 2px rgba(209, 100, 101, 0.5);
   opacity: 0.6;
   z-index: 152;

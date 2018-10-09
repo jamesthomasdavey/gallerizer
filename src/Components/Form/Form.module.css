@@ -38,6 +38,8 @@
 }
 
 .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 70%;
   height: 2.4rem;
@@ -45,8 +47,10 @@
   border: none;
   border-radius: 1.4rem;
   outline: 0;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
   font-size: 1rem;
+  -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
 
@@ -61,7 +65,7 @@
 }
 
 .Reset {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
   background: #fff;
   color: #e7a8a8;
