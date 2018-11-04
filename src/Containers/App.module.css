@@ -18,19 +18,20 @@
   position: absolute;
   left: 0;
   top: 0;
-  background-image: url("./../Assets/Images/gear-white.svg");
+  background-image: url('./../Assets/Images/gear.svg');
   background-size: 30px;
   background-repeat: no-repeat;
   background-position: center center;
   width: 50px;
   height: 50px;
+  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   border-radius: 100%;
-  z-index: 1100;
+  z-index: 1200;
 }
 
 .GearIcon.rotate {
-  background-image: url("./../Assets/Images/gear.svg");
+  -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 

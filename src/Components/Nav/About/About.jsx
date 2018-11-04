@@ -21,17 +21,6 @@ const about = props => (
       <br />
       <a href="mailto:james.t.davey@gmail.com">james.t.davey@gmail.com</a>.
     </p>
-    <p>
-      Gear icon by{" "}
-      <a
-        href="https://www.behance.net/pio-5"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Egor Rumyantsev
-      </a>
-      .
-    </p>
     <button onClick={props.closeAbout} className={classes.closeButton}>
       Close
     </button>
