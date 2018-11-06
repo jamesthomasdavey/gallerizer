@@ -1,0 +1,12 @@
+{
+  "runtime~main.js": "/gallerizer/static/js/runtime~main.e20afb60.js",
+  "runtime~main.js.map": "/gallerizer/static/js/runtime~main.e20afb60.js.map",
+  "vendors.js": "/gallerizer/static/js/vendors.f53fe9ee.chunk.js",
+  "vendors.js.map": "/gallerizer/static/js/vendors.f53fe9ee.chunk.js.map",
+  "main.css": "/gallerizer/static/css/main.d430f312.chunk.css",
+  "main.js": "/gallerizer/static/js/main.b2a8e58b.chunk.js",
+  "main.js.map": "/gallerizer/static/js/main.b2a8e58b.chunk.js.map",
+  "static/media/gear.svg": "/gallerizer/static/media/gear.eb7d89d6.svg",
+  "static/media/paint.png": "/gallerizer/static/media/paint.93c3ca4a.png",
+  "index.html": "/gallerizer/index.html"
+}
