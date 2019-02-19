@@ -1,27 +1,27 @@
-import React, { Component } from "react";
-import classes from "./App.module.css";
+import React, { Component } from 'react';
+import classes from './App.module.css';
 
-import Nav from "../Components/Nav/Nav";
-import Form from "../Components/Form/Form";
-import Results from "../Components/Results/Results";
-import Backdrop from "../Components/Backdrop/Backdrop";
-import Toolbar from "../Components/Toolbar/Toolbar";
+import Nav from '../Components/Nav/Nav';
+import Form from '../Components/Form/Form';
+import Results from '../Components/Results/Results';
+import Backdrop from '../Components/Backdrop/Backdrop';
+import Toolbar from '../Components/Toolbar/Toolbar';
 // some comment
 class App extends Component {
   state = {
     isMetric: false,
     includeHeight: false,
     formValues: {
-      wallWidth: "",
-      itemWidth: "",
-      itemHeight: "",
-      itemQuantity: ""
+      wallWidth: '',
+      itemWidth: '',
+      itemHeight: '',
+      itemQuantity: ''
     },
     newFormValues: {
-      wallWidth: "",
-      itemWidth: "",
-      itemHeight: "",
-      itemQuantity: ""
+      wallWidth: '',
+      itemWidth: '',
+      itemHeight: '',
+      itemQuantity: ''
     },
     margin: 0,
     maxMargin: 0,
@@ -69,10 +69,10 @@ class App extends Component {
   resetHandler = () => {
     const newState = { ...this.state };
     newState.formValues = {
-      wallWidth: "",
-      itemWidth: "",
-      itemHeight: "",
-      itemQuantity: ""
+      wallWidth: '',
+      itemWidth: '',
+      itemHeight: '',
+      itemQuantity: ''
     };
     newState.newFormValues = { ...newState.formValues };
     newState.margin = 0;
@@ -85,8 +85,7 @@ class App extends Component {
   getMaxMarginPercentHandler = () => {
     const maxMargin =
       (this.state.newFormValues.wallWidth -
-        this.state.newFormValues.itemWidth *
-          this.state.newFormValues.itemQuantity) /
+        this.state.newFormValues.itemWidth * this.state.newFormValues.itemQuantity) /
       2;
     return Math.floor((maxMargin / this.state.newFormValues.wallWidth) * 100);
   };
@@ -106,28 +105,21 @@ class App extends Component {
       newState.selectedItemIndex,
       newState.newFormValues.itemQuantity
     );
-    newState.selectedItemIndex = this.increaseSelectedItemIndex(
-      newState.selectedItemIndex
-    );
-    newState.margin = this.decreaseMarginHandler(
-      newState.margin,
-      newState.maxMargin
-    );
+    newState.selectedItemIndex = this.increaseSelectedItemIndex(newState.selectedItemIndex);
+    newState.margin = this.decreaseMarginHandler(newState.margin, newState.maxMargin);
     newState.margin = this.increaseMarginHander(newState.margin);
     newState.formValues = newState.newFormValues;
     this.setState(newState);
   };
 
   keyPressHandler = e => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       this.calculateHandler();
     }
   };
 
   decreaseSelectedItemIndex = (selectedItemIndex, itemQuantity) => {
-    return selectedItemIndex + 1 > itemQuantity
-      ? itemQuantity - 1
-      : selectedItemIndex;
+    return selectedItemIndex + 1 > itemQuantity ? itemQuantity - 1 : selectedItemIndex;
   };
 
   increaseSelectedItemIndex = selectedItemIndex => {
@@ -161,10 +153,10 @@ class App extends Component {
 
   unselectAllHandler = e => {
     if (
-      e.target.getAttribute("id") !== "wallItem" &&
-      e.target.getAttribute("id") !== "innerDetails" &&
-      e.target.getAttribute("id") !== "innerParagraph" &&
-      e.target.getAttribute("id") !== "innerMarker"
+      e.target.getAttribute('id') !== 'wallItem' &&
+      e.target.getAttribute('id') !== 'innerDetails' &&
+      e.target.getAttribute('id') !== 'innerParagraph' &&
+      e.target.getAttribute('id') !== 'innerMarker'
     ) {
       this.setState({ selectedItemIndex: -1000 });
     }
@@ -172,22 +164,16 @@ class App extends Component {
 
   render() {
     return (
-      <div
-        className={classes.wrapper}
-        onKeyPress={e => this.keyPressHandler(e)}
-      >
+      <div className={classes.wrapper} onKeyPress={e => this.keyPressHandler(e)}>
         <div
-          className={[
-            classes.GearIcon,
-            classes[this.state.navOpen ? "rotate" : ""]
-          ].join(" ")}
+          role="switch"
+          aria-checked={this.state.navOpen}
+          aria-label="Show Navigation"
+          className={[classes.GearIcon, classes[this.state.navOpen ? 'rotate' : '']].join(' ')}
           onClick={this.toggleNavHandler}
         />
         <Toolbar />
-        <Backdrop
-          navOpen={this.state.navOpen}
-          closeNav={this.closeNavHandler}
-        />
+        <Backdrop navOpen={this.state.navOpen} closeNav={this.closeNavHandler} />
         <Nav
           isMetric={this.state.isMetric}
           includeHeight={this.state.includeHeight}
@@ -221,8 +207,7 @@ class App extends Component {
               disableIncreaseButton={this.state.margin >= this.state.maxMargin}
               disablePreviousButton={this.state.selectedItemIndex <= 0}
               disableNextButton={
-                this.state.selectedItemIndex + 1 >=
-                  this.state.formValues.itemQuantity ||
+                this.state.selectedItemIndex + 1 >= this.state.formValues.itemQuantity ||
                 this.state.selectedItemIndex < 0
               }
               unselectAll={this.unselectAllHandler}
