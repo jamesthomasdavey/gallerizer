@@ -134,24 +134,24 @@ class App extends Component {
     return margin < 0 ? 0 : margin;
   };
 
-  toggleNavHandler = () => {
+  toggleNavHandler() {
     const currentNavOpen = this.state.navOpen;
     this.setState({ navOpen: !currentNavOpen, aboutOpen: false });
-  };
+  }
 
-  closeNavHandler = () => {
+  closeNavHandler() {
     this.setState({ navOpen: false, aboutOpen: false });
-  };
+  }
 
-  openAboutHandler = () => {
+  openAboutHandler() {
     this.setState({ aboutOpen: true });
-  };
+  }
 
-  closeAboutHandler = () => {
+  closeAboutHandler() {
     this.setState({ aboutOpen: false });
-  };
+  }
 
-  unselectAllHandler = e => {
+  unselectAllHandler(e) {
     if (
       e.target.getAttribute('id') !== 'wallItem' &&
       e.target.getAttribute('id') !== 'innerDetails' &&
@@ -160,7 +160,7 @@ class App extends Component {
     ) {
       this.setState({ selectedItemIndex: -1000 });
     }
-  };
+  }
 
   render() {
     return (
