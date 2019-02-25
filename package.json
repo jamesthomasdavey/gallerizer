@@ -2,7 +2,7 @@
   "name": "gallerizer-v2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://jamesthomasdavey.github.io/gallerizer",
+  "homepage": "http://jamesthomasdavey.netlify.com/",
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
