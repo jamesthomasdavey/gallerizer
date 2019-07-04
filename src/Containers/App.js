@@ -99,7 +99,8 @@ class App extends Component {
     this.setState({ newFormValues: previousFormValues });
   };
 
-  calculateHandler = () => {
+  calculateHandler = e => {
+    e.preventDefault();
     let newState = { ...this.state };
     newState.maxMargin = this.getMaxMarginPercentHandler();
     newState.selectedItemIndex = this.decreaseSelectedItemIndex(
@@ -110,13 +111,21 @@ class App extends Component {
     newState.margin = this.decreaseMarginHandler(newState.margin, newState.maxMargin);
     newState.margin = this.increaseMarginHander(newState.margin);
     newState.formValues = newState.newFormValues;
-    this.setState(newState);
+    this.setState(newState, () => {
+      setTimeout(() => {
+        if (document.querySelector('#wallItem')) {
+          document.querySelector('#wallItem').focus();
+        } else if (document.querySelector('#errorMessage')) {
+          document.querySelector('#errorMessage').focus();
+        }
+      }, 0);
+    });
   };
 
   keyPressHandler = e => {
-    if (e.key === 'Enter') {
-      this.calculateHandler();
-    }
+    // if (e.key === 'Enter') {
+    //   this.calculateHandler();
+    // }
   };
 
   decreaseSelectedItemIndex = (selectedItemIndex, itemQuantity) => {

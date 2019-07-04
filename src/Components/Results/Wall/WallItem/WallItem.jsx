@@ -34,11 +34,13 @@ const wallItem = props => {
   };
 
   return (
-    <button
+    <div
       className={[getWallItemClass(props.index), 'wallItem'].join(' ')}
       style={wallItemStyle}
       aria-label={`Item ${props.index + 1}`}
+      role="region"
       id={`wallItem`}
+      tabIndex="0"
       onClick={() => props.selectItem(props.index)}
       onFocus={() => props.selectItem(props.index)}
       aria-describedby="innerParagraph"
@@ -46,7 +48,7 @@ const wallItem = props => {
       <div className={classes.content}>
         <p>{props.index + 1}</p>
       </div>
-    </button>
+    </div>
   );
 };
 

@@ -1,8 +1,8 @@
-import React from "react";
-import classes from "./Wall.module.css";
+import React from 'react';
+import classes from './Wall.module.css';
 
-import WallItem from "./WallItem/WallItem";
-import Details from "./Details/Details";
+import WallItem from './WallItem/WallItem';
+import Details from './Details/Details';
 
 const Wall = props => {
   const innerWallStyle = () => {
@@ -11,7 +11,7 @@ const Wall = props => {
 
   const wallItems = () => {
     return Array(Number(props.formValues.itemQuantity))
-      .fill("_")
+      .fill('_')
       .map((item, index) => {
         return (
           <WallItem
@@ -32,6 +32,8 @@ const Wall = props => {
       className={classes.outer}
       id="outer"
       onClick={e => props.unselectAll(e)}
+      role="region"
+      aria-label="Wall"
     >
       <div className={classes.inner} id="inner" style={innerWallStyle()}>
         {wallItems()}

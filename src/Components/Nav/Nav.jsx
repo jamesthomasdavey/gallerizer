@@ -7,7 +7,11 @@ import About from './About/About';
 class Nav extends Component {
   render() {
     return (
-      <div className={[classes.wrapper, classes[this.props.navOpen ? 'open' : '']].join(' ')}>
+      <div
+        role="region"
+        aria-label="Settings"
+        className={[classes.wrapper, classes[this.props.navOpen ? 'open' : '']].join(' ')}
+      >
         <div className="nav__menu">
           <ul className={classes.ul}>
             <li className={classes.li}>
