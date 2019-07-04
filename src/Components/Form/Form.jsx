@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import classes from "./Form.module.css";
+import classes from './Form.module.css';
 
 class Form extends Component {
   wallWidthInputRef = React.createRef();
@@ -32,6 +32,7 @@ class Form extends Component {
               ref={this.wallWidthInputRef}
               onChange={event => this.props.changeValue(event)}
               value={newFormValues.wallWidth}
+              onFocus={this.props.closeNav}
             />
           </li>
           <li>
@@ -74,15 +75,12 @@ class Form extends Component {
           </li>
         </ul>
         <button
-          className={[classes.button, classes.Calculate].join(" ")}
+          className={[classes.button, classes.Calculate].join(' ')}
           onClick={this.props.calculate}
         >
           Calculate
         </button>
-        <button
-          className={[classes.button, classes.Reset].join(" ")}
-          onClick={this.props.reset}
-        >
+        <button className={[classes.button, classes.Reset].join(' ')} onClick={this.props.reset}>
           Clear
         </button>
       </div>

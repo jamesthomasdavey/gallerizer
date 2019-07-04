@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
-import classes from "./Details.module.css";
+import React, { Fragment } from 'react';
+import classes from './Details.module.css';
 
-import convertToUnit from "./convertToUnit";
+import convertToUnit from './convertToUnit';
 
 const details = props => {
   let { wallWidth, itemWidth, itemQuantity } = props.formValues;
@@ -35,11 +35,13 @@ const details = props => {
     <Fragment>
       <div className={classes.wrapperOuter} style={position}>
         <div className={classes.wrapperInner} id="innerDetails">
-          <p id="innerParagraph">{convertToUnit(centerPoint, props.isMetric)}</p>
+          <p id="innerParagraph" aria-live="polite" aria-hidden="true">
+            {convertToUnit(centerPoint, props.isMetric)}
+          </p>
         </div>
       </div>
       <div className={classes.marker} style={position}>
-        <div className={classes.marker__inner} id="innerMarker"/>
+        <div className={classes.marker__inner} id="innerMarker" />
       </div>
     </Fragment>
   );

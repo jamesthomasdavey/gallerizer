@@ -1,56 +1,56 @@
-import React from "react";
-import classes from "./Nav.module.css";
+import React, { Component } from 'react';
+import classes from './Nav.module.css';
 
-import Toggler from "./Toggler/Toggler";
-import About from "./About/About";
+import Toggler from './Toggler/Toggler';
+import About from './About/About';
 
-const nav = props => {
-  return (
-    <div
-      className={[classes.wrapper, classes[props.navOpen ? "open" : ""]].join(
-        " "
-      )}
-    >
-      <div className="nav__menu">
-        <ul className={classes.ul}>
-          <li className={classes.li}>
-            <input
-              className={classes.input}
-              type="checkbox"
-              checked={props.isMetric}
-              id="isMetric"
-              value="Metric"
-              onChange={props.changeUnit}
-            />
-            <label className={classes.navLabel} htmlFor="isMetric">
-              Metric
-              <Toggler isEnabled={props.isMetric} />
-            </label>
-          </li>
-          <li>
-            <input
-              className={classes.input}
-              type="checkbox"
-              checked={props.includeHeight}
-              id="includeHeight"
-              value="Include Height"
-              onChange={props.changeHeightDisplay}
-            />
-            <label className={classes.navLabel} htmlFor="includeHeight">
-              Height
-              <Toggler isEnabled={props.includeHeight} />
-            </label>
-          </li>
-          <li>
-            <label className={classes.navLabel} onClick={props.openAbout}>
-              About
-            </label>
-          </li>
-        </ul>
+class Nav extends Component {
+  render() {
+    return (
+      <div className={[classes.wrapper, classes[this.props.navOpen ? 'open' : '']].join(' ')}>
+        <div className="nav__menu">
+          <ul className={classes.ul}>
+            <li className={classes.li}>
+              <button
+                className={classes.navLabel}
+                role="switch"
+                aria-checked={this.props.isMetric}
+                onClick={this.props.changeUnit}
+                tabIndex={this.props.navOpen && !this.props.aboutOpen ? '0' : '-1'}
+              >
+                Metric
+                <Toggler isEnabled={this.props.isMetric} />
+              </button>
+            </li>
+            <li>
+              <button
+                className={classes.navLabel}
+                role="switch"
+                aria-checked={this.props.includeHeight}
+                onClick={this.props.changeHeightDisplay}
+                tabIndex={this.props.navOpen && !this.props.aboutOpen ? '0' : '-1'}
+              >
+                Height
+                <Toggler isEnabled={this.props.includeHeight} />
+              </button>
+            </li>
+            <li>
+              <button
+                className={classes.navLabel}
+                onClick={this.props.openAbout}
+                tabIndex={this.props.navOpen && !this.props.aboutOpen ? '0' : '-1'}
+                aria-expanded={this.props.aboutOpen}
+                id="aboutButton"
+              >
+                About
+              </button>
+            </li>
+          </ul>
+        </div>
+        <About aboutOpen={this.props.aboutOpen} closeAbout={this.props.closeAbout} />
       </div>
-      <About aboutOpen={props.aboutOpen} closeAbout={props.closeAbout} />
-    </div>
-  );
-};
+    );
+  }
+}
 
-export default nav;
+export default Nav;

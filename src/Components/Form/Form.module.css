@@ -73,14 +73,16 @@
 }
 
 .Calculate:hover,
-.Calculate:active {
+.Calculate:active,
+.Calculate:focus {
   background: #ba2a2c;
   /* box-shadow: 0 4px 6px rgba(0,0,0,0.3); */
   /* transform: translateY(-2px); */
 }
 
 .Reset:hover,
-.Reset:active {
+.Reset:active,
+.Reset:focus {
   background: #e7a8a8;
   color: #fff;
 }

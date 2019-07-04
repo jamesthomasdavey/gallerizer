@@ -17,6 +17,7 @@
   transition-property: transform, background-color, box-shadow;
   transition-property: transform, background-color, box-shadow, -webkit-transform,
     -webkit-box-shadow;
+  outline: none;
 }
 
 .wrapper:hover {

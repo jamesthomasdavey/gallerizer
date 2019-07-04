@@ -1,5 +1,5 @@
-import React from "react";
-import classes from "./WallItem.module.css";
+import React from 'react';
+import classes from './WallItem.module.css';
 
 const wallItem = props => {
   const { itemWidth, wallWidth, itemHeight } = props.formValues;
@@ -29,21 +29,24 @@ const wallItem = props => {
   const getWallItemClass = index => {
     let className = [classes.wrapper];
     className.push(selectedItemIndex === index ? classes.active : null);
-    className.push("wallItem");
+    className.push('wallItem');
     return className.join(` `);
   };
 
   return (
-    <div
-      className={getWallItemClass(props.index)}
+    <button
+      className={[getWallItemClass(props.index), 'wallItem'].join(' ')}
       style={wallItemStyle}
-      id="wallItem"
+      aria-label={`Item ${props.index + 1}`}
+      id={`wallItem`}
       onClick={() => props.selectItem(props.index)}
+      onFocus={() => props.selectItem(props.index)}
+      aria-describedby="innerParagraph"
     >
       <div className={classes.content}>
         <p>{props.index + 1}</p>
       </div>
-    </div>
+    </button>
   );
 };
 

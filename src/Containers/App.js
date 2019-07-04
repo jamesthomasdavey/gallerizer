@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import classes from './App.module.css';
 
+import Gear from '../Components/Gear/Gear';
 import Nav from '../Components/Nav/Nav';
 import Form from '../Components/Form/Form';
 import Results from '../Components/Results/Results';
 import Backdrop from '../Components/Backdrop/Backdrop';
 import Toolbar from '../Components/Toolbar/Toolbar';
-// some comment
+
 class App extends Component {
   state = {
     isMetric: false,
@@ -144,11 +145,15 @@ class App extends Component {
   };
 
   openAboutHandler = () => {
-    this.setState({ aboutOpen: true });
+    this.setState({ aboutOpen: true }, () => {
+      document.querySelector('#aboutContent').focus();
+    });
   };
 
   closeAboutHandler = () => {
-    this.setState({ aboutOpen: false });
+    this.setState({ aboutOpen: false }, () => {
+      document.querySelector('#aboutButton').focus();
+    });
   };
 
   unselectAllHandler = e => {
@@ -165,13 +170,7 @@ class App extends Component {
   render() {
     return (
       <div className={classes.wrapper} onKeyPress={e => this.keyPressHandler(e)}>
-        <div
-          role="switch"
-          aria-checked={this.state.navOpen}
-          aria-label="Show Navigation"
-          className={[classes.GearIcon, classes[this.state.navOpen ? 'rotate' : '']].join(' ')}
-          onClick={this.toggleNavHandler}
-        />
+        <Gear navOpen={this.state.navOpen} toggleNavHandler={this.toggleNavHandler} />
         <Toolbar />
         <Backdrop navOpen={this.state.navOpen} closeNav={this.closeNavHandler} />
         <Nav
@@ -194,6 +193,7 @@ class App extends Component {
               changeValue={this.changeValueHandler}
               reset={this.resetHandler}
               calculate={this.calculateHandler}
+              closeNav={this.closeNavHandler}
             />
             <Results
               isMetric={this.state.isMetric}

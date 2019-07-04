@@ -31,10 +31,13 @@
   text-decoration: none;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  outline: none;
 }
 
-.wrapper a:hover {
+.wrapper a:hover,
+.wrapper a:focus {
   color: #4f5d75;
+  text-decoration: underline;
 }
 
 .closeButton {
@@ -57,8 +60,13 @@
   border: 2px solid #e7a8a8;
 }
 
-.closeButton:hover {
+.closeButton:hover,
+.closeButton:focus {
   background: #e7a8a8;
   color: #fff;
   cursor: pointer;
+}
+
+.aboutContent {
+  outline: none;
 }

@@ -1,0 +1,35 @@
+.GearIcon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  background-image: url('./../../Assets/Images/gear.svg');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 100%;
+  z-index: 1200;
+}
+
+.GearIcon.rotate {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.GearIcon:hover {
+  cursor: pointer;
+}
+
+.GearIcon:focus {
+  border: 3px solid white;
+}
+
+.GearIcon.rotate:focus {
+  border: 3px solid var(--main-space);
+}
