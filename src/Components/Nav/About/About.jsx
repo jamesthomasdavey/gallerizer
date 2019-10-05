@@ -6,6 +6,7 @@ const about = props => (
     role="region"
     aria-label="About"
     className={[classes.wrapper, classes[props.aboutOpen ? 'open' : '']].join(' ')}
+    aria-hidden={props.aboutOpen ? 'false' : 'true'}
   >
     <div tabIndex="-1" id="aboutContent" className={classes.aboutContent}>
       <p>

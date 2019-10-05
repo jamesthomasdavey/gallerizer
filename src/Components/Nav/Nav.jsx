@@ -11,6 +11,7 @@ class Nav extends Component {
         role="region"
         aria-label="Settings"
         className={[classes.wrapper, classes[this.props.navOpen ? 'open' : '']].join(' ')}
+        aria-hidden={this.props.navOpen ? 'false' : 'true'}
       >
         <div className="nav__menu">
           <ul className={classes.ul}>
