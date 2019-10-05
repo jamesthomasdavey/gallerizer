@@ -44,7 +44,8 @@
   transform: translateX(-0.2rem);
 }
 
-.adjuster:hover {
+.adjuster:hover,
+.adjuster:focus {
   cursor: pointer;
   background: #ba2a2c;
 }
@@ -54,7 +55,8 @@
   border: none;
 }
 
-.adjuster:disabled:hover {
+.adjuster:disabled:hover,
+.adjuster:disabled:focus {
   cursor: default;
   background: transparent;
 }

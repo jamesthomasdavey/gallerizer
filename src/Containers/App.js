@@ -43,8 +43,7 @@ class App extends Component {
     this.setState({ includeHeight: !oldIncludeHeight });
   };
 
-  adjustMarginHandler = event => {
-    const adjustType = event.target.getAttribute(`data-type`);
+  adjustMarginHandler = adjustType => {
     const newState = { ...this.state };
     if (adjustType === `increase`) {
       if (this.state.margin + 1 <= this.state.maxMargin) {

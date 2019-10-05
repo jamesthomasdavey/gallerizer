@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import classes from "./Results.module.css";
+import classes from './Results.module.css';
 
-import Error from "./Error/Error";
-import Margin from "./Margin/Margin";
-import Wall from "./Wall/Wall";
+import Error from './Error/Error';
+import Margin from './Margin/Margin';
+import Wall from './Wall/Wall';
 
 const results = props => {
   const { wallWidth, itemWidth, itemHeight, itemQuantity } = props.formValues;

@@ -38,7 +38,7 @@ const wallItem = props => {
       className={[getWallItemClass(props.index), 'wallItem'].join(' ')}
       style={wallItemStyle}
       aria-label={`Item ${props.index + 1}`}
-      role="region"
+      role="figure"
       id={`wallItem`}
       tabIndex="0"
       onClick={() => props.selectItem(props.index)}
