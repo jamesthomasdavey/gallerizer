@@ -3,8 +3,7 @@ import classes from './WallItem.module.css';
 
 const wallItem = props => {
   const { itemWidth, wallWidth, itemHeight } = props.formValues;
-
-  const { margin, includeHeight, selectedItemIndex } = props;
+  const { margin, includeHeight, selectedItemIndex, position } = props;
 
   const getWallItemWidthPercent = () => {
     let innerWallWidthPercent = 100 - margin * 2;
@@ -33,18 +32,32 @@ const wallItem = props => {
     return className.join(` `);
   };
 
+  const getAccessibleMeasurement = position => {
+    let newString;
+    if (position.charAt(position.length - 1) === `"`) {
+      newString = `${position.substring(0, position.length - 1)} inches`;
+    } else {
+      newString = `${position.substring(0, position.length - 2)} centimeters`;
+    }
+    return newString;
+  }
+
+  getAccessibleMeasurement(position);
+
   return (
     <div
       className={[getWallItemClass(props.index), 'wallItem'].join(' ')}
       style={wallItemStyle}
       aria-label={`Item ${props.index + 1}`}
+      aria-describedby={`item${props.index + 1}Description`}
       role="figure"
       id={`wallItem`}
       tabIndex="0"
       onClick={() => props.selectItem(props.index)}
       onFocus={() => props.selectItem(props.index)}
-      aria-describedby="innerParagraph"
+      onKeyDown={e => props.unselect(e)}
     >
+      <span id={`item${props.index + 1}Description`} aria-hidden="true" className='sr-only'>Center measurement is {getAccessibleMeasurement(position)} from the left wall edge</span>
       <div className={classes.content}>
         <p>{props.index + 1}</p>
       </div>

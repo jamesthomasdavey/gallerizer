@@ -1,5 +1,7 @@
 import React from 'react';
 import classes from './Wall.module.css';
+import convertToUnit from './convertToUnit';
+import getItemCenterPoint from './getItemCenterPoint';
 
 import WallItem from './WallItem/WallItem';
 import Details from './Details/Details';
@@ -13,6 +15,7 @@ const Wall = props => {
     return Array(Number(props.formValues.itemQuantity))
       .fill('_')
       .map((item, index) => {
+        const itemCenterPoint = getItemCenterPoint(props.margin, index, props.formValues);
         return (
           <WallItem
             formValues={props.formValues}
@@ -22,6 +25,8 @@ const Wall = props => {
             key={index}
             index={index}
             selectItem={props.selectItem}
+            position={convertToUnit(itemCenterPoint, props.isMetric)}
+            unselect={props.unselectAll}
           />
         );
       });
@@ -39,9 +44,8 @@ const Wall = props => {
         {wallItems()}
       </div>
       <Details
-        margin={props.margin}
-        selectedItemIndex={props.selectedItemIndex}
-        formValues={props.formValues}
+        currentItemCenterPoint={getItemCenterPoint(props.margin, props.selectedItemIndex, props.formValues)}
+        wallWidth={props.formValues.wallWidth}
         isMetric={props.isMetric}
       />
     </div>

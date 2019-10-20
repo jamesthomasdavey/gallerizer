@@ -165,12 +165,12 @@ class App extends Component {
   };
 
   unselectAllHandler = e => {
-    if (
+    if (Number(e.keyCode) === 27 || (
       e.target.getAttribute('id') !== 'wallItem' &&
       e.target.getAttribute('id') !== 'innerDetails' &&
       e.target.getAttribute('id') !== 'innerParagraph' &&
       e.target.getAttribute('id') !== 'innerMarker'
-    ) {
+    )) {
       this.setState({ selectedItemIndex: -1000 });
     }
   };

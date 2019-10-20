@@ -6,7 +6,7 @@ class Margin extends Component {
     ariaLive: false
   };
   componentDidMount() {
-    console.log('just mounted');
+    
   }
   componentWillUnmount() {
     this.setState({ ariaLive: false });
