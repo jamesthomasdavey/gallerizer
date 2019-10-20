@@ -1,5 +1,5 @@
-import React from 'react';
-import classes from './WallItem.module.css';
+import React from "react";
+import classes from "./WallItem.module.css";
 
 const wallItem = props => {
   const { itemWidth, wallWidth, itemHeight } = props.formValues;
@@ -28,7 +28,7 @@ const wallItem = props => {
   const getWallItemClass = index => {
     let className = [classes.wrapper];
     className.push(selectedItemIndex === index ? classes.active : null);
-    className.push('wallItem');
+    className.push("wallItem");
     return className.join(` `);
   };
 
@@ -40,13 +40,13 @@ const wallItem = props => {
       newString = `${position.substring(0, position.length - 2)} centimeters`;
     }
     return newString;
-  }
+  };
 
   getAccessibleMeasurement(position);
 
   return (
     <div
-      className={[getWallItemClass(props.index), 'wallItem'].join(' ')}
+      className={[getWallItemClass(props.index), "wallItem"].join(" ")}
       style={wallItemStyle}
       aria-label={`Item ${props.index + 1}`}
       aria-describedby={`item${props.index + 1}Description`}
@@ -57,9 +57,12 @@ const wallItem = props => {
       onFocus={() => props.selectItem(props.index)}
       onKeyDown={e => props.unselect(e)}
     >
-      <span id={`item${props.index + 1}Description`} aria-hidden="true" className='sr-only'>Center measurement is {getAccessibleMeasurement(position)} from the left wall edge</span>
-      <div className={classes.content}>
+      <div aria-hidden="true" className={classes.content}>
         <p>{props.index + 1}</p>
+        <span id={`item${props.index + 1}Description`} className="sr-only">
+          Center measurement is {getAccessibleMeasurement(position)} from the
+          left wall edge
+        </span>
       </div>
     </div>
   );

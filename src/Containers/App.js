@@ -179,7 +179,7 @@ class App extends Component {
     return (
       <div className={classes.wrapper} onKeyPress={e => this.keyPressHandler(e)}>
         <Gear navOpen={this.state.navOpen} toggleNavHandler={this.toggleNavHandler} />
-        <Toolbar />
+        <Toolbar navOpen={this.state.navOpen} />
         <Backdrop navOpen={this.state.navOpen} closeNav={this.closeNavHandler} />
         <Nav
           isMetric={this.state.isMetric}
@@ -191,7 +191,7 @@ class App extends Component {
           openAbout={this.openAboutHandler}
           closeAbout={this.closeAboutHandler}
         />
-        <main className={classes.main}>
+        <main aria-hidden={this.state.navOpen} className={classes.main}>
           <div className={classes.container}>
             <Form
               ref={this.formRef}
