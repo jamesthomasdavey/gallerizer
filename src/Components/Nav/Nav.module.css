@@ -46,7 +46,6 @@
   -webkit-transition: 0.2s all ease;
   transition: 0.2s all ease;
   color: #333;
-  outline: none;
   border: 3px solid transparent;
   font-size: 1rem;
   background: transparent;
@@ -55,10 +54,6 @@
 .navLabel:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.15);
-}
-
-.navLabel:focus {
-  border: 3px solid var(--main-space);
 }
 
 @media (min-width: 500px) {

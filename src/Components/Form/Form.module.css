@@ -32,7 +32,6 @@
   background: transparent;
   border: none;
   border-bottom: 2px solid #ddd;
-  outline: none;
   color: #333;
   font-weight: 500;
 }
@@ -46,7 +45,6 @@
   margin: 0 auto;
   border: none;
   border-radius: 1.4rem;
-  outline: 0;
   -ms-flex-pack: distribute;
   justify-content: space-around;
   font-size: 1rem;

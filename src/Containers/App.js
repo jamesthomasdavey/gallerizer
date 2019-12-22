@@ -85,7 +85,8 @@ class App extends Component {
   getMaxMarginPercentHandler = () => {
     const maxMargin =
       (this.state.newFormValues.wallWidth -
-        this.state.newFormValues.itemWidth * this.state.newFormValues.itemQuantity) /
+        this.state.newFormValues.itemWidth *
+          this.state.newFormValues.itemQuantity) /
       2;
     return Math.floor((maxMargin / this.state.newFormValues.wallWidth) * 100);
   };
@@ -106,8 +107,13 @@ class App extends Component {
       newState.selectedItemIndex,
       newState.newFormValues.itemQuantity
     );
-    newState.selectedItemIndex = this.increaseSelectedItemIndex(newState.selectedItemIndex);
-    newState.margin = this.decreaseMarginHandler(newState.margin, newState.maxMargin);
+    newState.selectedItemIndex = this.increaseSelectedItemIndex(
+      newState.selectedItemIndex
+    );
+    newState.margin = this.decreaseMarginHandler(
+      newState.margin,
+      newState.maxMargin
+    );
     newState.margin = this.increaseMarginHander(newState.margin);
     newState.formValues = newState.newFormValues;
     this.setState(newState, () => {
@@ -128,7 +134,9 @@ class App extends Component {
   };
 
   decreaseSelectedItemIndex = (selectedItemIndex, itemQuantity) => {
-    return selectedItemIndex + 1 > itemQuantity ? itemQuantity - 1 : selectedItemIndex;
+    return selectedItemIndex + 1 > itemQuantity
+      ? itemQuantity - 1
+      : selectedItemIndex;
   };
 
   increaseSelectedItemIndex = selectedItemIndex => {
@@ -165,22 +173,32 @@ class App extends Component {
   };
 
   unselectAllHandler = e => {
-    if (Number(e.keyCode) === 27 || (
-      e.target.getAttribute('id') !== 'wallItem' &&
-      e.target.getAttribute('id') !== 'innerDetails' &&
-      e.target.getAttribute('id') !== 'innerParagraph' &&
-      e.target.getAttribute('id') !== 'innerMarker'
-    )) {
+    if (
+      Number(e.keyCode) === 27 ||
+      (e.target.getAttribute('role') !== 'tab' &&
+        e.target.getAttribute('id') !== 'innerDetails' &&
+        e.target.getAttribute('id') !== 'innerParagraph' &&
+        e.target.getAttribute('id') !== 'innerMarker')
+    ) {
       this.setState({ selectedItemIndex: -1000 });
     }
   };
 
   render() {
     return (
-      <div className={classes.wrapper} onKeyPress={e => this.keyPressHandler(e)}>
-        <Gear navOpen={this.state.navOpen} toggleNavHandler={this.toggleNavHandler} />
+      <div
+        className={classes.wrapper}
+        onKeyPress={e => this.keyPressHandler(e)}
+      >
+        <Gear
+          navOpen={this.state.navOpen}
+          toggleNavHandler={this.toggleNavHandler}
+        />
         <Toolbar navOpen={this.state.navOpen} />
-        <Backdrop navOpen={this.state.navOpen} closeNav={this.closeNavHandler} />
+        <Backdrop
+          navOpen={this.state.navOpen}
+          closeNav={this.closeNavHandler}
+        />
         <Nav
           isMetric={this.state.isMetric}
           includeHeight={this.state.includeHeight}
@@ -215,7 +233,8 @@ class App extends Component {
               disableIncreaseButton={this.state.margin >= this.state.maxMargin}
               disablePreviousButton={this.state.selectedItemIndex <= 0}
               disableNextButton={
-                this.state.selectedItemIndex + 1 >= this.state.formValues.itemQuantity ||
+                this.state.selectedItemIndex + 1 >=
+                  this.state.formValues.itemQuantity ||
                 this.state.selectedItemIndex < 0
               }
               unselectAll={this.unselectAllHandler}

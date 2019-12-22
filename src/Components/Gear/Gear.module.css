@@ -4,7 +4,6 @@
   top: 0;
   background: transparent;
   border: none;
-  outline: none;
   background-image: url('./../../Assets/Images/gear.svg');
   background-size: 30px;
   background-repeat: no-repeat;
@@ -24,12 +23,4 @@
 
 .GearIcon:hover {
   cursor: pointer;
-}
-
-.GearIcon:focus {
-  border: 3px solid white;
-}
-
-.GearIcon.rotate:focus {
-  border: 3px solid var(--main-space);
 }

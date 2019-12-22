@@ -31,7 +31,6 @@
   text-decoration: none;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  outline: none;
 }
 
 .wrapper a:hover,
@@ -49,7 +48,6 @@
   margin: 4rem auto 1rem;
   border: none;
   border-radius: 1.2rem;
-  outline: 0;
   -ms-flex-pack: distribute;
   justify-content: space-around;
   font-size: 1rem;
